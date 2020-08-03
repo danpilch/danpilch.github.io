@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# org-knowledgebase
+An engineering knowledgebase providing organisation technical documentation useful for both engineers and non-technical staff.
 
-You can use the [editor on GitHub](https://github.com/danpilch/org-knowledgebase/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This knowledgebase is built upon the widely utilised distributed version-control system Git and is hosted on GitHub. Two versions are available:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. Code view (markdown) available [here](https://github.com/danpilch/org-knowledgebase/blob/master/README.md)
+2. GitHub Pages view available [here](https://danpilch.github.io/org-knowledgebase/) 
 
-### Markdown
+These two views allow for flexibility in the organisation and make technical documentation accessible to both engineers and more business focused team members.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Example knowledgebase uses
 
-```markdown
-Syntax highlighted code block
+A non-exhaustive list of possible uses for a version controlled knowledgebase: 
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/danpilch/org-knowledgebase/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Onboarding documentation (for welcoming new employees into the organisation and current employees switching teams. This should be a living document updated regularly by each team)
+- Remote working standards (how the organisation works remotely, what is expected of an employee, tips, guidance and best practices)
+- Architechture (defines how different components work together in a workload. Often with a focus on diagrams) 
+- Runbooks (to enable consistent and quick responses to understood events in a system. For example, these could help an on-call team member triage a system they aren't actively involed in maintaining) 
+- Offboarding documentation (when an employee leaves the organisation, what steps are required to safely alight from the business)

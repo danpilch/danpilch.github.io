@@ -38,7 +38,7 @@ This document does not explore the application stack, nor the software optimisat
 
 When rebuilding the infrastructure we tried to align to current AWS best practices.
 
-### Key takeaways from rebuild:
+### Key takeaways from rebuild project:
 
 #### Positives:
 - Use of CloudFlare DNS and DDOS Proxy protection alleviated the sophisticated DDOS attack, the client was not held to ransom.

@@ -5,7 +5,7 @@
 DDOS attacks hurt legitimate businesses and assailants know them to be an effective tool to extort. Leveraging cloud technologies and enterprise vendor solutions you can quickly and effectively alleviate these types of attacks. This document describes a sophisticated DDOS attack against a client and how we managed to:
 
 1. Quickly alleviate the attack and get the system back online.
-2. Rebuild the application stack with a focus on security and infrastructure redundancy.
+2. Rebuild the platform with a focus on security and infrastructure redundancy.
 
 ## Background
 

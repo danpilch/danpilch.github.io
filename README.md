@@ -10,7 +10,7 @@ These two views allow for flexibility in the organisation and make technical doc
 
 ## Projects
 
-[Cryptocurrency exchanges and Denial-Of-Service Attacks - mitigation strategies for legitimate businesses in the new wild west](./projects/ddos.md)
+[Cryptocurrency Exchanges and Denial-Of-Service Attacks - mitigation strategies for legitimate businesses in the new wild west](./projects/ddos.md)
 
 ## Example knowledgebase uses
 

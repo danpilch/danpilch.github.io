@@ -35,7 +35,7 @@ When rebuilding the infrastructure I tried to align to AWS best practices at the
 
 #### Positives:
 - Use of CloudFlare DNS and DDOS Proxy protection alleviated the sophisticated DDOS attacks, the client did not get held to ransom
-- attackers got bored and moved on after they realised they could not extort the target.
+- Attackers lost interest and moved on after they realised they could not extort the target.
 - Multi-AZ AWS deployments for redundancy.
 - CloudFlare interfaces directly with AWS Application Load Balancers (only CloudFlare IP ranges could communicate with LBs Security Group firewall rules).
 

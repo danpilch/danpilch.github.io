@@ -24,7 +24,7 @@ Key points from the post-mortem:
 - Our monitoring and alerting was lacking and we would need to build a better solution moving forward.
 - The current platform architecture was no longer fit for purpose and we would need to plan for a redesign.
 
-The client had quite a basic application stack running in AWS. This solution did not account for traffic spikes or redundancy in case of failure. This could have possibly led to why the assailants chose them as a target.
+The client had quite a basic platform stack running in AWS. This solution did not account for traffic spikes or redundancy in case of failure. This could have possibly led to why the assailants chose them as a target.
 
 ### Rudimentary architecture of the original v1 system:
 

@@ -50,5 +50,5 @@ When rebuilding the infrastructure we tried to align to current AWS best practic
 - CloudFlare could be seen as a single-point-of-failure (what if CloudFlare's DNS is unavailable? Could we leverage multiple DNS providers for failover?).
 - Higher costs involved:
   - CloudFlare enterprise support
-  - Increased AWS infrastructure costs for new application architecture
+  - Increased AWS infrastructure costs for new platform architecture
 - Increased infrastructure complexity.

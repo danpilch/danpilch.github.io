@@ -17,7 +17,7 @@ I performed some preliminary investigation into the traffic received, types of u
 
 I presented my findings to the team and came up with a solution to quickly alleviate further attack attempts. We chose to engage CloudFlare and discuss advanced enterprise options with their engineers because their free tier solutions do not mitigate sophisticated browser-based DDOS attacks. Once CloudFlare had been engaged and the application DNS switched, we could breathe a collective sigh of relief that successive attacks should not be effective.
 
-Once the initial attack had ceased, we held a post-mortem with relevant stakeholders to further understand how and why this attack could happen and what we could do to prevent this happening again in future.
+Once the initial attack had ceased, we held a post-mortem with relevant stakeholders to further understand how and why this attack could happen and what we could do to prevent this scenario happening again in future.
 
 Key points from the post-mortem:
 

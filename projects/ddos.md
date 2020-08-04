@@ -9,6 +9,8 @@ This document describes a sophisticated DDoS attack and how we managed to:
 1. Quickly mitigate the attack and get the system back online.
 2. Establish a project to rebuild the platform with a focus on security and infrastructure redundancy.
 
+The learnings from this event helped the organisation to build a more robust platform that was more secure, fault-tolerant and able to scale.
+
 ## Background
 
 A huge spike in traffic was noticed in business hours which overwhelmed the service and lasted about 30 minutes. Once the traffic abated and the service was able to once again resume normal function, the assailant started a live chat with the customer support team via their support channel and explained they had just caused the outage and would attack again unless the business paid 20BTC [(Bitcoin)](https://bitcoin.org/en/) within 2 hours (at time of attack 1BTC ~$17,900USD).
@@ -23,10 +25,10 @@ Once the initial attack had ceased, we held a post-mortem with relevant stakehol
 
 Key points from the post-mortem:
 
-- Our monitoring and alerting could have been better. We would need to build a better solution moving forward.
+- Monitoring and alerting tools were lacking. We would need to build better solutions moving forward.
 - The current platform architecture was no longer fit for purpose and we would need to plan for a redesign.
 
-### Rudimentary architecture of the original v1 system:
+### v1 architecture:
 
 <img src="http://yuml.me/diagram/scruffy/class/[note: Original v1 architecture{bg:wheat}],[User]<->[Route53 DNS Lookup],[User]->[EC2 Instance (app)],[EC2 Instance (app)]<->[Cache],[EC2 Instance (app)]<->[Database]"/>
 

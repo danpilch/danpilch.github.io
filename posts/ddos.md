@@ -1,6 +1,6 @@
 # Cryptocurrency Exchanges and Denial-of-Service Attacks - mitigation strategies for legitimate businesses in the new wild west
 
-## Executive Summary:
+## Executive Summary
 
 DDoS attacks hurt legitimate businesses and assailants know them to be an effective tool to extort. Leveraging cloud technologies and enterprise vendor solutions you can quickly and effectively stop these types of attacks.
 
@@ -28,27 +28,27 @@ Key points from the post-mortem:
 - Monitoring and alerting tools were lacking. We would need to build better solutions moving forward.
 - The current platform architecture was no longer fit for purpose and we would need to plan for a redesign.
 
-### v1 architecture:
+### v1 architecture
 
 <img src="http://yuml.me/diagram/scruffy/class/[note: Original v1 architecture{bg:wheat}],[User]<->[Route53 DNS Lookup],[User]->[EC2 Instance (app)],[EC2 Instance (app)]<->[Cache],[EC2 Instance (app)]<->[Database]"/>
 
 This document does not explore the application stack, nor the software optimisations that were made and focuses purely on infrastructure.
 
-### v2 architecture:
+### v2 architecture
 
 <img src="http://yuml.me/diagram/scruffy/class/[note: Target v2 architecture{bg:wheat}],[User]<->[CloudFlare DNS Lookup],[User]<->[CloudFlare DDoS Protection Proxy]<->[EC2 Application LB N+1 Multi-AZ],[EC2 Application LB N+1 Multi-AZ]<->[EC2 AutoScaling Group Instances N..],[EC2 AutoScaling Group Instances N..]<->[Cache],[EC2 AutoScaling Group Instances N..]<->[Database]"/>
 
 When rebuilding the infrastructure we tried to align to current AWS best practices.
 
-### Key takeaways from rebuild project:
+### Key takeaways from rebuild project
 
-#### Positives:
+#### Positives
 - The use of CloudFlare DNS and DDoS Proxy protection mitigated the sophisticated DDoS attack, the business was not held to ransom.
 - Attackers lost interest and moved on after they realised they could not extort the target.
 - Multi-AZ AWS deployments for redundancy.
 - CloudFlare's proxy connectivity established with AWS Application Load Balancers (only CloudFlare owned IP ranges whitelisted in Load Balancer Security Groups).
 
-#### Negatives:
+#### Negatives
 - CloudFlare could be seen as a single-point-of-failure (what if CloudFlare's DNS is unavailable? Could we leverage multiple DNS providers for failover?).
 - Higher costs involved:
   - CloudFlare enterprise support

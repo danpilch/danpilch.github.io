@@ -5,7 +5,3 @@ plugins:
 title: Dan Pilch’s blog
 description: Personal and professional blog
 author: Dan Pilch
-#collections:
-#  posts:
-#    output: true
-#    permalink: /blog/:year/:month/:day/:title:output_ext

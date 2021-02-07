@@ -1,3 +1,9 @@
+---
+layout: post
+title: Cryptocurrency Exchanges and Denial-of-Service Attacks - mitigation strategies for legitimate businesses in the new wild west
+last_updated: 2021-02-07
+category: posts
+---
 # Cryptocurrency Exchanges and Denial-of-Service Attacks - mitigation strategies for legitimate businesses in the new wild west
 
 ## Executive Summary

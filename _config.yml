@@ -8,5 +8,4 @@ author: Dan Pilch
 collections:
   posts:
     output: true
-    #permalink: /posts/blog/:short_year/:month/:day/:title:output_ext
-    permalink: /:year/:month/:day/:title:output_ext
+    permalink: /blog/:year/:month/:day/:title:output_ext

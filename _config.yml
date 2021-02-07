@@ -5,3 +5,4 @@ plugins:
 title: Dan Pilch’s blog
 description: Personal and professional blog
 author: Dan Pilch
+permalink: /:year/:month/:day/:title:output_ext

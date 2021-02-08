@@ -2,6 +2,6 @@ theme: jekyll-theme-minimal
 
 plugins:
   - jekyll-feed
-title: Dan Pilch’s blog
-description: Personal and professional blog
+title: Dan Pilch Blog
+description: Personal and Professional blog
 author: Dan Pilch

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AWS CSM - Figuring out what permissions your app really needs
-last_updated: 2021-02-08
+last_updated: 2021-02-09
 category: posts
 tags:
   - aws
@@ -68,8 +68,11 @@ If we look at the `nc` in terminal:
 }
 ```
 
-We're interested in `"Service": "EC2", "Api": "DescribeInstances"`. From this
-we can surmise we require `EC2:DescribeInstances`.
+We're interested in:
+```json
+"Service": "EC2", "Api": "DescribeInstances"
+```
+From this we can surmise we require `EC2:DescribeInstances`.
 
 ### Realtime IAM  Policy Generation
 

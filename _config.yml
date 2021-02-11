@@ -3,9 +3,7 @@ theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 feed:
-  tags:
-    only:
-      - community
+  tags: true
 title: Dan Pilch Blog
 description: Personal and Professional blog
 author: Dan Pilch

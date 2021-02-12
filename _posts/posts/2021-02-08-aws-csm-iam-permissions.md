@@ -2,7 +2,7 @@
 layout: post
 title: AWS CSM - Figuring out what permissions your app really needs
 last_updated: 2021-02-09
-category: community
+categories: community
 tags:
   - aws
   - community

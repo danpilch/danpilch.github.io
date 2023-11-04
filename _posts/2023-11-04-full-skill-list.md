@@ -7,7 +7,7 @@ category: cv
 
 ## Skills
 
-## Skills
+Here's a non-exhaustive list of some of the tech I have touched throughout my career.
 
 ### Containerization
 - Docker
@@ -195,5 +195,3 @@ category: cv
 - Change Management (ITSM)
 - Project Planning
 - Risk Assessment
-
-*Note: This list is non-exhaustive.*

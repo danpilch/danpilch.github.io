@@ -9,189 +9,201 @@ category: cv
 
 Here's a non-exhaustive list of some of the tech I have touched throughout my career.
 
-### Containerization
-- Docker
-- Kubernetes
-- CRI-O
-- Weave
-- CNI
-- Etcd
-- Podman
+### Container Tech
+- docker
+- kubernetes
+- mesos
+- singularity
+- cri-o
+- weave
+- etcd
+- podman
 - ipvs
 - cert-manager
-- Metal-lb
+- metal-lb
 
-### Service Mesh
-- Istio
+### edge/proxy/network
+- envoy
+- kong
+- haproxy
+- istio
 
-### Virtualization
-- KVM
-- VMware
-- Oracle Virtualbox
+### virtualization
+- kvm
+- vmware
+- virtualbox
 
-### Android Mobile App Reverse Engineering
-- Objection
-- Frida
-- MitmProxy
-- ADB
+### android reverse engineering
+- objection
+- frida
+- mitmproxy
+- android debug bridge
 
-### Cloud Infrastructure
-- Amazon AWS
-  - Cloudformation
-  - API Gateway
-  - VPC
-  - EC2
-  - IAM
-  - S3
-  - Glacier
-  - Route 53
-  - ECS
-  - SNS
-  - SES
-  - EMR
-  - ElasticBeanstalk
-  - CloudFront
-  - CloudWatch
-  - Kinesis
-  - SQS
-  - Lambda
-  - Datapipeline
-- Google Cloud Platform
-  - Compute Engine
-  - Container Engine
-- Cloudflare DDOS
-- Rackspace/Akamai CDN
-- Oracle Weblogic
+### cloud infrastructure
 
-### Configuration Management
-- Ansible
-- Packer
-- Vagrant
-- Terraform
+I have used _so_ many AWS resources it's I can't list them all. These
+are the most relevant.
 
-### Infrastructure as Code (IAC)
-- Cloudformation
-- Terraform
-- Troposphere
+- aws
+  - eks
+  - cloudformation
+  - api gateway
+  - vpc
+  - ec2
+  - iam
+  - s3
+  - route53
+  - ecs
+  - sns
+  - ses
+  - sqs
+  - emr
+  - cloudfront
+  - cloudwatch
+  - kinesis
+  - sqs
+  - lambda
+- gcp 
+  - compute engine
+  - container engine
+- cloudflare
+- newrelic
+- sumologic
+- appsignal
+- rackspace
+- akamai cdn
+- oracle weblogic
 
-### CI/CD
-- Jenkins
-- Gitlab CI
-- TravisCI
-- Thoughtworks GO
+### iac / configuration management
+- ansible
+- packer
+- vagrant
+- terraform
 
-### Build Tooling
-- Maven
-- setuptools
-- Ant
-- Gradle
-- Python tooling
+### ci/cd
+- concourse
+- github actions
+- jenkins
+- gitlab ci
+- travisci
+- thoughtworks go
 
-### Programming
-- Python
-- Golang
-- Bash
-- PHP
-- Groovy
-- Ruby
-- Apache Tinkerpop (Gremlin)
+### build tooling
+- maven
+- make
+- ant
+- gradle
 
-### Databases
-- Apache Cassandra
-- Elasticsearch
-- TitanDB (Graph Database)
-- Oracle/Percona/MariaDB (MySQL)
-- PostgresDB
-- RDS
-- DynamoDB
+### programming
+- python
+- golang
+- bash
+- php
+- groovy
+- ruby
 
-### Data Processing
-- Apache Spark
-- Apache Hadoop
-- YARN
-- Hive
-- AWS EMR
-- Airflow
+### databases
+- postgresdb
+- cassandra
+- elasticsearch
+- oracle/percona/mariadb/mysql
+- rds (all flavours)
+- dynamodb
+- planetscale
+- aiven
 
-### Operating Systems
-- Linux
-  - RHEL
-  - CentOS
-  - Debian
-  - Ubuntu
-  - Arch
-  - Alpine
-- Windows
-  - Server 2013
-  - Server 2017
-  - Windows 10
-  - Windows 8
-  - Windows 7
+### workflows
 
-### Debugging
-- Strace
+- temporal
+
+### data processing
+- databricks
+- spark
+- hadoop
+- yarn
+- hive
+- aws emr
+- airflow
+
+### operating systems
+- linux
+  - ubuntu
+  - rhel
+  - centos
+  - debian
+  - arch
+  - alpine
+- windows
+  - server 2013
+  - server 2017
+  - windows 10
+  - windows 8
+  - windows 7
+
+### debugging
+- strace
 - lsof
 - tcpdump
 - gdb
 
-### Web Servers, Load Balancing & Proxying
-- Oracle Weblogic
-- Nginx
-- Tomcat
-- Apache
-- Physical Load Balancers (Cisco)
-- Squid Proxy
+### web servers, load balancing & proxying
+- oracle weblogic
+- nginx
+- tomcat
+- apache
+- physical load balancers (cisco)
+- squid proxy
 
-### MVC
-- Spring
-- Django
-- Laravel
-- Flask
+### mvc
+- spring
+- django
+- laravel
+- flask
 
-### Project Management Tools
-- Redmine
-- Atlassian Stack (Bitbucket, Confluence, etc.)
-- Sonarqube
+### project management tools
+- redmine
+- atlassian stack (bitbucket, confluence, etc.)
+- sonarqube
 
-### System Logging
-- Sumologic
-- Logstash
-- Rsyslog
-- Logrotate
+### system logging
+- sumologic
+- logstash
+- rsyslog
+- logrotate
 
-### Messaging Queueing
-- Kafka
-- RabbitMQ
-- Redis
-- Celery
-- AWS SQS
-- IBM MQ
+### messaging queueing
+- kafka
+- rabbitmq
+- redis
+- celery
+- aws sqs
+- ibm mq
 
-### Authentication
-- OpenAM
-- OpenDJ
-- LDAP
-- Active Directory
-- Kerberos
+### authentication
+- openam
+- opendj
+- ldap
+- active directory
+- kerberos
 
-### Web Scraping
-- Selenium
-- Scrapy
-- PhantomJS
-- BeautifulSoup
+### web scraping
+- selenium
+- scrapy
+- phantomjs
+- beautifulsoup
 
-### Monitoring & Visualization
-- Zabbix
-- Opsview
-- Nagios
-- Prometheus
-- Sentry
-- Grafana
+### monitoring & visualization
+- zabbix
+- opsview
+- nagios
+- prometheus
+- sentry
+- grafana
 
-### Management
-- Team Leadership
-- Agile Delivery
-- ITIL
-- Change Management (ITSM)
-- Project Planning
-- Risk Assessment
+### management
+- team leadership
+- agile delivery
+- itil
+- change management (itsm)
+- project planning
+- risk assessment

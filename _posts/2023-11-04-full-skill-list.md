@@ -112,7 +112,7 @@ are the most relevant.
 - planetscale
 - aiven
 
-### workflows
+### workflow engines
 
 - temporal
 
@@ -133,12 +133,6 @@ are the most relevant.
   - debian
   - arch
   - alpine
-- windows
-  - server 2013
-  - server 2017
-  - windows 10
-  - windows 8
-  - windows 7
 
 ### debugging
 - strace
@@ -161,8 +155,10 @@ are the most relevant.
 - flask
 
 ### project management tools
-- redmine
 - atlassian stack (bitbucket, confluence, etc.)
+- quip
+- loom
+- redmine
 - sonarqube
 
 ### system logging
@@ -171,12 +167,10 @@ are the most relevant.
 - rsyslog
 - logrotate
 
-### messaging queueing
-- kafka
+### messaging queueing/caching
 - rabbitmq
+- kafka
 - redis
-- celery
-- aws sqs
 - ibm mq
 
 ### authentication
@@ -185,6 +179,7 @@ are the most relevant.
 - ldap
 - active directory
 - kerberos
+- okta
 
 ### web scraping
 - selenium
@@ -199,6 +194,7 @@ are the most relevant.
 - prometheus
 - sentry
 - grafana
+- newrelic
 
 ### management
 - team leadership

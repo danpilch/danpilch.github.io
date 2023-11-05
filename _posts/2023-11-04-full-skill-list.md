@@ -118,6 +118,7 @@ are the most relevant.
 - temporal
 
 ### data processing
+- benthos
 - databricks
 - spark
 - hadoop

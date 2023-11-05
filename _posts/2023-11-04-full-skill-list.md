@@ -9,7 +9,7 @@ category: cv
 
 Here's a non-exhaustive list of some of the tech I have touched throughout my career.
 
-### Container Tech
+### container tech
 - docker
 - kubernetes
 - mesos
@@ -21,6 +21,7 @@ Here's a non-exhaustive list of some of the tech I have touched throughout my ca
 - ipvs
 - cert-manager
 - metal-lb
+- guardian
 
 ### edge/proxy/network
 - envoy

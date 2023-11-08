@@ -28,3 +28,16 @@ title: Posts
     </li>
   {% endfor %}
 </ul>
+
+## CV
+
+<ul class="posts">
+  {% for post in site.categories.cv %}
+    <li class="post">
+      <a href="{{ post.url }}">{{ post.title }}</a><br />
+      <time class="publish-date" datetime="{{ post.date | date: '%f' }}">
+        {{ post.date | date: "%b %-d, %Y" }}
+      </time>
+    </li>
+  {% endfor %}
+</ul>

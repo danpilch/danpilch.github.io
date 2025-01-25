@@ -25,14 +25,15 @@ jobs:
         DATE=$(date +"%Y-%m-%d")
         mv resume/output/danpilch_resume.pdf resume/output/danpilch_resume_$DATE.pdf
 
-
-    - name: Create Git Tag
+    - name: Create Unique Git Tag
       id: create_tag
       run: |
-        DATE=$(date +"%Y-%m-%d")
-        TAG="resume-$DATE"
-        git tag $TAG
-        git push origin $TAG
+        TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
+        TAG="resume-$TIMESTAMP"
+    
+        # Create and push the unique tag
+        git tag "$TAG"
+        git push origin "$TAG"
         echo "tag_name=$TAG" >> $GITHUB_ENV
 
     - name: Upload PDF to Release

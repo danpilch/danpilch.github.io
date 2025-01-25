@@ -25,6 +25,24 @@ jobs:
         DATE=$(date +"%Y-%m-%d")
         mv resume/output/danpilch_resume.pdf resume/output/danpilch_resume_$DATE.pdf
 
+    - name: Create Git Tag
+      id: create_tag
+      run: |
+        DATE=$(date +"%Y-%m-%d")
+        TAG="resume-$DATE"
+        git tag $TAG
+        git push origin $TAG
+        echo "tag_name=$TAG" >> $GITHUB_ENV
+
+    - name: Upload PDF to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: resume/output/danpilch_resume_*.pdf
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ env.tag_name }}
+
+    - name: Notify Success
+      run: echo "PDF generated and added to release."
     - name: Upload PDF to Release
       uses: softprops/action-gh-release@v1
       with:

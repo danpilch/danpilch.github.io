@@ -18,7 +18,7 @@ jobs:
     - name: Generate PDF
       run: |
         mkdir -p resume/output
-        docker run --rm -v ${{ github.workspace }}/resume:/workspace -w /workspace blang/latex:latest xelatex -output-directory=output danpilch_resume.xtx
+        docker run --rm -v ${{ github.workspace }}/resume:/workspace -w /workspace docker.io/danpilch/cv-build:v1 xelatex -output-directory=output danpilch_resume.xtx
 
     - name: Rename PDF with Date
       run: |

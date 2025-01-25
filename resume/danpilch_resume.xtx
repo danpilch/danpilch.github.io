@@ -69,24 +69,24 @@
 %     PROJECT ZEUS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-#\section{Projects}
-#\runsubsection{Space Robotics Team}
-#\descript{| Path-Planning Lead}
-#\location{Jan 2018 – Present | Somewhere, XX}
-#\begin{tightemize}
-#\item Spearhead the development effort for the path-planning functionality of a team of three robots.
-#\item ROS provides movement servers and the planning is being implemented in Python to allow for fully-autonomous operation.
-#\end{tightemize}
-#\sectionsep
-#
-#\runsubsection{Chit Chat}
-#\descript{| Class Project for Distributed Client-Server Programming}
-#\location{Jan 2018 – May 2018 | Somewhere, XX}
-#\begin{tightemize}
-#\item Lead the development of \textbf{\href{https://github.com/user/repo}{Chit Chat}}, an anonymous chat application created as a class project.
-#\item Chit Chat provides real-time communication while utilizing a PHP backend and AngularJS frontend.
-#\end{tightemize}
-#\sectionsep
+%\section{Projects}
+%\runsubsection{Space Robotics Team}
+%\descript{| Path-Planning Lead}
+%\location{Jan 2018 – Present | Somewhere, XX}
+%\begin{tightemize}
+%\item Spearhead the development effort for the path-planning functionality of a team of three robots.
+%\item ROS provides movement servers and the planning is being implemented in Python to allow for fully-autonomous operation.
+%\end{tightemize}
+%\sectionsep
+%
+%\runsubsection{Chit Chat}
+%\descript{| Class Project for Distributed Client-Server Programming}
+%\location{Jan 2018 – May 2018 | Somewhere, XX}
+%\begin{tightemize}
+%\item Lead the development of \textbf{\href{https://github.com/user/repo}{Chit Chat}}, an anonymous chat application created as a class project.
+%\item Chit Chat provides real-time communication while utilizing a PHP backend and AngularJS frontend.
+%\end{tightemize}
+%\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     RESEARCH

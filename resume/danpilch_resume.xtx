@@ -58,7 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\documentclass[]{deedy-resume-reversed}
+\documentclass[]{danpilch-resume}
 \usepackage{fancyhdr}
 
 \pagestyle{fancy}

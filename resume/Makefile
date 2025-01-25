@@ -23,11 +23,25 @@ help:
 
 ### Build
 
-.PHONY: build
-build: description = Build docker image
-build:
-#	docker build . \
-		-t $(SERVICE_NAME):$(SERVICE_VERSION) \
-		-t quay.io/shimmur/$(SERVICE_NAME):$(SERVICE_VERSION) \
-		-t quay.io/shimmur/$(SERVICE_NAME):$(SERVICE_VERSION)-local-build
-	xelatex -output-directory=./output deedy_resume-reversed.xtx
+all: build
+
+.PHONY: build-docker
+build-docker: description = Build cv via docker image
+build-docker: clean
+	docker run \
+		-v ${PWD}:/workspace -w /workspace docker.io/danpilch/cv-build xelatex -output-directory=output danpilch_resume.xtx
+
+.PHONY: build-local
+build-local:
+	xelatex -output-directory=./output danpilch_resume.xtx
+
+
+.PHONY: clean
+clean: description = Clean build output dir
+clean:
+	rm -rf ./output/*
+
+.PHONY: view
+view: description = View generated CV PDF
+view: 
+	open ./output/danpilch_resume.pdf

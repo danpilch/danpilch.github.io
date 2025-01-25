@@ -78,7 +78,7 @@
 %     TITLE NAME
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{John Doe}{ %\urlstyle{same}\href{http://example.com}{example.com}| \href{http://example2.co}{example2.co}\\
+\namesection{Daniel Pilch}{ %\urlstyle{same}\href{https://www.linkedin.com/in/danpilch/}{linkedin}| \href{http://example2.co}{example2.co}\\
 \href{mailto:john.doe@example.com}{john.doe@example.com} | \href{tel:11111111111}{111.111.1111}
 }
 
@@ -95,9 +95,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Experience}
-\runsubsection{Company A}
-\descript{| Advanced Development Intern }
-\location{May 2018 – Aug 2018 | Somewhere, XX}
+\runsubsection{Community.com}
+\descript{| Staff Systems Engineer }
+\location{May 2020 – Present | Remote }
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Developed a cloud-based solution to automate and enhance the engineering process for network installation using AWS and Python.
@@ -107,8 +107,8 @@
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Company B}
-\descript{| Intern }
+\runsubsection{Nomura}
+\descript{| VP Engineering }
 \location{Feb 2017 – Nov 2017 | Somewhere, XX}
 \begin{tightemize}
 \item Coordinated with multiple departments to lead a software product evaluation resulting in a fit-for-purpose verdict and provided a recommendation on moving forward.

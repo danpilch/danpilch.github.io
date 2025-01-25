@@ -25,20 +25,24 @@ jobs:
         DATE=$(date +"%Y-%m-%d")
         mv resume/output/danpilch_resume.pdf resume/output/danpilch_resume_$DATE.pdf
 
-    - name: Create or Update Git Tag
+    - name: Create or Overwrite Git Tag
       id: create_tag
       run: |
         DATE=$(date +"%Y-%m-%d")
         TAG="resume-$DATE"
+    
+        # Check if the tag exists
         if git rev-parse "$TAG" >/dev/null 2>&1; then
-          echo "Tag $TAG already exists. Deleting it..."
-          git tag -d "$TAG"
-          git push --delete origin "$TAG"
+          echo "Tag $TAG already exists. Overwriting it..."
+          git tag -d "$TAG" || true
+          git push --delete origin "$TAG" || true
         fi
-        echo "Creating tag $TAG..."
+    
+        # Create and push the new tag
         git tag "$TAG"
         git push origin "$TAG"
         echo "tag_name=$TAG" >> $GITHUB_ENV
+
 
     - name: Upload PDF to Release
       uses: softprops/action-gh-release@v1

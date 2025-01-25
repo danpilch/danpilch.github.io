@@ -58,7 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\documentclass[]{dp-resume-reversed}
+\documentclass[]{deedy-resume-reversed}
 \usepackage{fancyhdr}
 
 \pagestyle{fancy}

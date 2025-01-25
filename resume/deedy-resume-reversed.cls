@@ -1,5 +1,5 @@
 % Intro Options
-\ProvidesClass{dp-reversed}[2018/09/22 CV class]
+\ProvidesClass{deedy-resume-reversed}[2018/09/22 CV class]
 \NeedsTeXFormat{LaTeX2e}
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%

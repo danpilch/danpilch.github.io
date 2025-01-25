@@ -25,13 +25,19 @@ jobs:
         DATE=$(date +"%Y-%m-%d")
         mv resume/output/danpilch_resume.pdf resume/output/danpilch_resume_$DATE.pdf
 
-    - name: Create Git Tag
+    - name: Create or Update Git Tag
       id: create_tag
       run: |
         DATE=$(date +"%Y-%m-%d")
         TAG="resume-$DATE"
-        git tag $TAG
-        git push origin $TAG
+        if git rev-parse "$TAG" >/dev/null 2>&1; then
+          echo "Tag $TAG already exists. Deleting it..."
+          git tag -d "$TAG"
+          git push --delete origin "$TAG"
+        fi
+        echo "Creating tag $TAG..."
+        git tag "$TAG"
+        git push origin "$TAG"
         echo "tag_name=$TAG" >> $GITHUB_ENV
 
     - name: Upload PDF to Release

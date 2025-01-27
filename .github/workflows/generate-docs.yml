@@ -1,0 +1,71 @@
+name: Generate Resume & Create Release
+
+on:
+  push:
+    paths:
+      - "resume/**"  # Trigger when files in the resume directory are updated
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    name: Build Resume and Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Generate PDF, DOCX, and TXT
+      run: |
+        mkdir -p resume/output
+
+        # Build PDF using XeLaTeX
+        docker run --rm \
+          -v ${{ github.workspace }}/resume:/workspace \
+          -w /workspace \
+          docker.io/danpilch/cv-build:v2 \
+          xelatex -output-directory=output danpilch_resume.xtx
+
+        # Build DOCX using Pandoc
+        docker run --rm \
+          -v ${{ github.workspace }}/resume:/workspace \
+          -w /workspace \
+          docker.io/danpilch/cv-build:v2 \
+          pandoc danpilch_resume.xtx --from=latex -o output/danpilch_resume.docx
+
+        # Build plain text using Pandoc
+        docker run --rm \
+          -v ${{ github.workspace }}/resume:/workspace \
+          -w /workspace \
+          docker.io/danpilch/cv-build:v2 \
+          pandoc danpilch_resume.xtx --from=latex -t plain -o output/danpilch_resume.txt
+
+    - name: Rename Files with Date
+      run: |
+        DATE=$(date +"%Y-%m-%d")
+        mv resume/output/danpilch_resume.pdf  resume/output/danpilch_resume_${DATE}.pdf
+        mv resume/output/danpilch_resume.docx resume/output/danpilch_resume_${DATE}.docx
+        mv resume/output/danpilch_resume.txt  resume/output/danpilch_resume_${DATE}.txt
+
+    - name: Create Unique Git Tag
+      id: create_tag
+      run: |
+        TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
+        TAG="resume-$TIMESTAMP"
+        
+        git tag "$TAG"
+        git push origin "$TAG"
+        echo "tag_name=$TAG" >> $GITHUB_ENV
+
+    - name: Upload All Resumes to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ env.tag_name }}
+        files: |
+          resume/output/danpilch_resume_*.pdf
+          resume/output/danpilch_resume_*.docx
+          resume/output/danpilch_resume_*.txt
+
+    - name: Notify Success
+      run: echo "PDF, DOCX, and TXT generated and attached to release."

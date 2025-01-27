@@ -1,5 +1,6 @@
 SERVICE_VERSION ?= $(shell git rev-parse --short HEAD)
 SERVICE_NAME := cv-generator
+CONTAINER_VERSION := v2
 
 # Utility functions
 check_defined = \
@@ -21,25 +22,55 @@ help: HELP_SCRIPT = \
 help:
 	@perl -ne '$(HELP_SCRIPT)' $(MAKEFILE_LIST)
 
-### Build
+### Build Targets
 
+# 'all' will build PDF, DOCX, and TXT
 all: build
 
 .PHONY: build
-build: description = Build cv via docker image
+build: description = Build PDF, DOCX, and TXT via Docker
 build: clean
-	docker run \
-		-v ${PWD}:/workspace -w /workspace docker.io/danpilch/cv-build xelatex -output-directory=output danpilch_resume.xtx
+	# Build PDF
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
+		xelatex -output-directory=output danpilch_resume.xtx
+
+	# Build DOCX (requires Pandoc in the container)
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
+		pandoc danpilch_resume.xtx --from=latex -o output/danpilch_resume.docx
+
+	# Build TXT (requires Pandoc in the container)
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
+		pandoc danpilch_resume.xtx --from=latex -t plain -o output/danpilch_resume.txt
 
 .PHONY: release
-release: description = Create a Github release for the new version
+release: description = Create a GitHub release for the new version
 release: clean build
 	gh release create resume-$(shell date +%Y-%m-%d) --generate-notes
 
+### Local Build Targets (skip Docker)
+
 .PHONY: build-local
+build-local: description = Build PDF locally if XeLaTeX is installed
 build-local:
 	xelatex -output-directory=./output danpilch_resume.xtx
 
+.PHONY: build-docx-local
+build-docx-local: description = Build DOCX locally if Pandoc is installed
+build-docx-local:
+	pandoc danpilch_resume.xtx -o output/danpilch_resume.docx
+
+.PHONY: build-txt-local
+build-txt-local: description = Build TXT locally if Pandoc is installed
+build-txt-local:
+	pandoc danpilch_resume.xtx -t plain -o output/danpilch_resume.txt
+
+### Utility
 
 .PHONY: clean
 clean: description = Clean build output dir
@@ -48,5 +79,5 @@ clean:
 
 .PHONY: view
 view: description = View generated CV PDF
-view: 
+view:
 	open ./output/danpilch_resume.pdf

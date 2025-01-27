@@ -205,7 +205,7 @@
 \section{Education}
 
 \subsection{University of Portsmouth}
-\descript{Computer Science (Hons) | BSc (1st Class)}
+\descript{Computer Science BSc (Hons) | (1st Class)}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,48 +215,55 @@
 \section{Skills}
 \subsection{Programming}
 \location{10+ years:}
-Python \textbullet{} Ansible \\
+Python \\
 \location{5+ years:}
 Golang \textbullet{}  \\
-\location{0+ years:}
-Matlab \textbullet{} R \textbullet{} SAS \\
+\location{5+ years:}
+Terraform \textbullet{} Ansible \textbullet{} \\
+\location{2+ years:}
+Ruby \textbullet{} Elixir \textbullet{} \\
+
 \sectionsep
 
 \subsection{Technology}
 Git/Github \textbullet{} AWS \textbullet{} Linux \\
-UNIX \textbullet{} Windows \textbullet{} ROS \\
+UNIX \textbullet{} Windows \textbullet{} GoogleCloud \\
 Artificial Intelligence \textbullet{} Automation \\
 \sectionsep
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COURSEWORK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Coursework}
-\subsection{Graduate}
-Analysis of Algorithms
+\subsection{Soft Skills}
+People Management \textbullet{}  \textbullet{} Engineering Leadership \\
 \sectionsep
 
-\subsection{Undergraduate}
-Artificial Intelligence \\
-{\footnotesize \textit{\textbf{(Teaching Assistant) }}} \\
-AI Robotics \\
-Operating Systems I \\
-Calculus I-IV \\
-Data Analysis I \\
-Introduction to Probability \\
-\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\section{Coursework}
+%\subsection{Graduate}
+%Analysis of Algorithms
+%\sectionsep
+%
+%\subsection{Undergraduate}
+%Artificial Intelligence \\
+%{\footnotesize \textit{\textbf{(Teaching Assistant) }}} \\
+%AI Robotics \\
+%Operating Systems I \\
+%Calculus I-IV \\
+%Data Analysis I \\
+%Introduction to Probability \\
+%\sectionsep
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Societies
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Societies}
-Association for Computing Machinery (ACM)\\
-Scrum Alliance Certified ScrumMaster\\
-University Honors College\\
-National Merit Scholarship Finalist \\
-\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     Societies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\section{Societies}
+%Association for Computing Machinery (ACM)\\
+%Scrum Alliance Certified ScrumMaster\\
+%University Honors College\\
+%National Merit Scholarship Finalist \\
+%\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     LINKS

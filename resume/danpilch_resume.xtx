@@ -19,7 +19,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \namesection{Daniel Pilch}{ %\urlstyle{same}\href{https://www.linkedin.com/in/danpilch/}{linkedin}| \href{https://github.com/danpilch}{Github}\\
-\href{mailto:danielpilch@hotmail.co.uk}{danielpilch@hotmail.co.uk} | \href{tel:+447716979933}{+44771697993}
+\href{mailto:danielpilch@hotmail.co.uk}{danielpilch@hotmail.co.uk} | \href{tel:+447716979933}{+44771697993} | UK/Remote
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,44 +36,70 @@
 
 \section{Experience}
 \runsubsection{Community.com}
-\descript{| Staff Systems Engineer }
-\location{May 2020 – Present | Remote }
+\descript{| Staff Engineer }
+\location{September 2020 – Present | Remote, USA/UK }
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item I do stuff? 
-\item 
-\item
-\item 
+\item Platform strategy: Lead the strategy, architecture and management of Community's infrastructure and platform systems.
+\item Platform Migration: Successfully migrated Community from Mesos to Kubernetes in AWS, ensuring parallel availability of both platforms during migration.
+\item Reduced complexity and costs while keeping within Community's 99.5\% uptime SLA.
+\item Operational cost management: Reduced overall cloud spend by 33\% (\$320,000) per year by introducing policy, spend controls and rightsizing workloads.
+\item Built and maintained tooling in golang, python and Elixir.
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Nomura}
 \descript{| VP Engineering }
-\location{Feb 2017 – Nov 2017 | Somewhere, XX}
+\location{May 2020 – August 2020 | Remote, UK}
 \begin{tightemize}
-\item Coordinated with multiple departments to lead a software product evaluation resulting in a fit-for-purpose verdict and provided a recommendation on moving forward.
+\item Planned and provisioned core banking network infrastructure routing via AWS DirectConnect and VPC peering.
+\item Provisioned AWS accounts for business units, focusing on account hardening, IAM, security and networking.
 \end{tightemize}
 \sectionsep
 
-%\runsubsection{Westpac New Zealand}
-%\descript{| Assistant Support Specialist }
-%\location{Aug 2015 – Oct 2016 | Somewhere, XX}
-%\begin{tightemize}
-%\item Interacted with clients to assess their problems and implement a solution in an efficient, friendly manner.
-%\item Prepared workstations and laptops for future use by company employees.
-%\item Created scripts to automate common tasks and increase productivity.
-%\end{tightemize}
-%\sectionsep
+\runsubsection{Westpac New Zealand}
+\descript{| DevOps / Data Engineer }
+\location{December 2018 – November 2019 | Auckland, New Zealand}
+\begin{tightemize}
+\item Led the development of a fraud data processing platform using Kafka, Spark, Hadoop, Hive, and Airflow on Kubernetes.
+\item Integrated mainframe IBM MQ queues with Kafka for real-time transaction data streaming.
+\end{tightemize}
+\sectionsep
 
-%\runsubsection{Bitcoin.com.au}
-%\descript{| DevOps Engineer Consultant }
-%\location{Aug 2015 – Oct 2016 | Somewhere, XX}
-%\begin{tightemize}
-%\item Interacted with clients to assess their problems and implement a solution in an efficient, friendly manner.
-%\item Prepared workstations and laptops for future use by company employees.
-%\item Created scripts to automate common tasks and increase productivity.
-%\end{tightemize}
-%\sectionsep
+\runsubsection{Bitcoin.com.au}
+\descript{| DevOps Engineer }
+\location{November 2017 – October 2018 | Melbourne/Remote, Australia}
+\begin{tightemize}
+\item Migrated bitcoin.com.au's entire platform softare entire stack to AWS using Terraform, Ansible and Docker.
+\item Migrated all software repositories and CI pipelines from Bitbucket to GitLab.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{PPL UK}
+\descript{| DevOps Engineer }
+\location{July 2016 – October 2017 | London, UK}
+\begin{tightemize}
+\item Established a DevOps culture and managed projects involving Apache Hadoop, AWS CloudFormation, and Docker.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Incopro}
+\descript{| DevOps Engineer }
+\location{May 2013 – July 2016 | London, UK}
+\begin{tightemize}
+\item Founding member of the company.
+\item Automated provisioning and deployments on 500+ base metal servers using Ansible.
+\item Managed web scraping software that scraped over 1000 websites for content and trademark protection.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{Warner Bros}
+\descript{| Anti-Piracy Expert }
+\location{September 2011 – September 2012 | London, UK}
+\begin{tightemize}
+\item Improved software and infrastructure for content protection through web scraping.
+\end{tightemize}
+\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     PROJECT ZEUS
@@ -179,7 +205,7 @@
 \section{Education}
 
 \subsection{University of Portsmouth}
-\descript{BSc Hons in Computer Science}
+\descript{Computer Science (Hons) | BSc (1st Class)}
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -188,10 +214,10 @@
 
 \section{Skills}
 \subsection{Programming}
-\location{3+ years:}
-Python \textbullet{} C/C++ \\
-\location{1+ years:}
-PHP \textbullet{} JavaScript \\
+\location{10+ years:}
+Python \textbullet{} Ansible \\
+\location{5+ years:}
+Golang \textbullet{}  \\
 \location{0+ years:}
 Matlab \textbullet{} R \textbullet{} SAS \\
 \sectionsep

@@ -25,11 +25,16 @@ help:
 
 all: build
 
-.PHONY: build-docker
-build-docker: description = Build cv via docker image
-build-docker: clean
+.PHONY: build
+build: description = Build cv via docker image
+build: clean
 	docker run \
 		-v ${PWD}:/workspace -w /workspace docker.io/danpilch/cv-build xelatex -output-directory=output danpilch_resume.xtx
+
+.PHONY: release
+release: description = Create a Github release for the new version
+release: clean build
+	gh release create resume-$(shell date +%Y-%m-%d) --generate-notes
 
 .PHONY: build-local
 build-local:

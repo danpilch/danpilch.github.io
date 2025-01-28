@@ -36,7 +36,7 @@
 
 \section{Experience}
 \runsubsection{Community.com}
-\descript{| Staff Engineer }
+\descript{| Staff Platform Engineer }
 \location{September 2020 – Present | Remote, USA/UK }
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
@@ -93,100 +93,13 @@
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Warner Bros}
-\descript{| Anti-Piracy Expert }
+\runsubsection{Warner Bros.}
+\descript{| Anti-Piracy Intern }
 \location{September 2011 – September 2012 | London, UK}
 \begin{tightemize}
-\item Improved software and infrastructure for content protection through web scraping.
+\item Managed data centre infrastructure for content protection activities through building web scrapers and DMCA content takedown.
 \end{tightemize}
 \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PROJECT ZEUS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\section{Projects}
-%\runsubsection{Space Robotics Team}
-%\descript{| Path-Planning Lead}
-%\location{Jan 2018 – Present | Somewhere, XX}
-%\begin{tightemize}
-%\item Spearhead the development effort for the path-planning functionality of a team of three robots.
-%\item ROS provides movement servers and the planning is being implemented in Python to allow for fully-autonomous operation.
-%\end{tightemize}
-%\sectionsep
-%
-%\runsubsection{Chit Chat}
-%\descript{| Class Project for Distributed Client-Server Programming}
-%\location{Jan 2018 – May 2018 | Somewhere, XX}
-%\begin{tightemize}
-%\item Lead the development of \textbf{\href{https://github.com/user/repo}{Chit Chat}}, an anonymous chat application created as a class project.
-%\item Chit Chat provides real-time communication while utilizing a PHP backend and AngularJS frontend.
-%\end{tightemize}
-%\sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     RESEARCH
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Research}
-% \runsubsection{Cornell Robot Learning Lab}
-% \descript{| Researcher}
-% \location{Jan 2014 – Jan 2015 | Ithaca, NY}
-% Worked with \textbf{\href{http://www.cs.cornell.edu/~ashesh/}{Ashesh Jain}} and \textbf{\href{http://www.cs.cornell.edu/~asaxena/}{Prof Ashutosh Saxena}} to create \textbf{PlanIt}, a tool which  learns from large scale user preference feedback to plan robot trajectories in human environments.
-% \sectionsep
-
-% \runsubsection{Cornell Phonetics Lab}
-% \descript{| Head Undergraduate Researcher}
-% \location{Mar 2012 – May 2013 | Ithaca, NY}
-% Led the development of \textbf{QuickTongue}, the first ever breakthrough tongue-controlled game with \textbf{\href{http://conf.ling.cornell.edu/~tilsen/}{Prof Sam Tilsen}} to aid in Linguistics research.
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COMMUNITY SERVICE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Community Service}
-
-% \begin{tabular}{rll}
-% 2013 -- 2018    & Tennessee     & St. Baldrick's Foundation\\
-% 2014 -- 2017	& Tennessee     & American Cancer Society's Hope Lodge\\
-% 2013 -- 2015    & Tennessee     & Habitat for Humanity\\
-% 2011 -- 2015    & Tennessee     & Special Olympics\\
-% \end{tabular}
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     SOCIETIES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Societies}
-
-% \begin{tabular}{rll}
-% 2018 -- 2018    & National      & Association of Computing Machinery (ACM)\\
-% 2017 -- 2019	& National      & Scrum Alliance Certified ScrumMaster\\
-% 2015 -- 2019    & University    & Shackouls Honors College\\
-% \end{tabular}
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     AWARDS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Awards}
-% \begin{tabular}{rll}
-% 2015        & 99\textsuperscript{th} percentile & National Merit Scholarship Finalist\\
-% \end{tabular}
-% \sectionsep
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     PUBLICATIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \section{Publications}
-% \renewcommand\refname{\vskip -1.5cm} % Couldn't get this working from the .cls file
-% \bibliographystyle{abbrv}
-% \bibliography{publications}
-% \nocite{*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -215,24 +128,39 @@
 \section{Skills}
 \subsection{Programming}
 \location{10+ years:}
-Python \\
+Python \textbullet{} Bash \\
 \location{5+ years:}
-Golang \textbullet{}  \\
-\location{5+ years:}
-Terraform \textbullet{} Ansible \textbullet{} \\
+Golang \\
 \location{2+ years:}
-Ruby \textbullet{} Elixir \textbullet{} \\
-
+Ruby \textbullet{} Elixir \\
 \sectionsep
 
-\subsection{Technology}
-Git/Github \textbullet{} AWS \textbullet{} Linux \\
-UNIX \textbullet{} Windows \textbullet{} GoogleCloud \\
-Artificial Intelligence \textbullet{} Automation \\
+\subsection{Core Technology}
+Kubernetes \textbullet{} AWS \textbullet{} Linux \\
+Terraform \textbullet{} Ansible \textbullet{} Packer \\
+OpenVPN \textbullet{} Tailscale \textbullet{} Docker \\
+Git/Github \textbullet{} AI (openai, huggingface, Ollama etc.) \\
+\sectionsep
+
+\subsection{Database Technology}
+PostgreSQL \textbullet{} MariaDB \textbullet{} Athena \\
+DynamoDB \textbullet{} Trino \textbullet{} Athena \\ 
+RabbitMQ \textbullet{} Prometheus \\
+\sectionsep
+
+\subsection{API Gateways and Proxies}
+HAProxy \textbullet{} Envoy \textbullet{} Kong \\
+\sectionsep
+
+\subsection{Vendor Technology}
+Temporal \textbullet{} Okta \textbullet{} Appsignal \\
+NewRelic \textbullet{} SumoLogic \textbullet{} PlanetScale \\
+Cloudflare \textbullet{} PagerDuty \textbullet{} Twilio \\
+Databricks
 \sectionsep
 
 \subsection{Soft Skills}
-People Management \textbullet{}  \textbullet{} Engineering Leadership \\
+People Management \textbullet{} Project Management \textbullet{} Engineering Leadership \\
 \sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

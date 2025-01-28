@@ -24,21 +24,21 @@ jobs:
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
           docker.io/danpilch/cv-build:v2 \
-          xelatex -output-directory=output danpilch-resume.xtx
+          xelatex -output-directory=output danpilch-resume.tex
 
         # Build DOCX using Pandoc
         docker run --rm \
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
           docker.io/danpilch/cv-build:v2 \
-          pandoc danpilch-resume.xtx --from=latex -o output/danpilch-resume.docx
+          pandoc danpilch-resume.tex --from=latex -o output/danpilch-resume.docx
 
         # Build plain text using Pandoc
         docker run --rm \
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
           docker.io/danpilch/cv-build:v2 \
-          pandoc danpilch-resume.xtx --from=latex -t plain -o output/danpilch-resume.txt
+          pandoc danpilch-resume.tex --from=latex -t plain -o output/danpilch-resume.txt
 
     - name: Rename Files with Date
       run: |

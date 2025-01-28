@@ -1,6 +1,7 @@
 SERVICE_VERSION ?= $(shell git rev-parse --short HEAD)
 SERVICE_NAME := cv-generator
 CONTAINER_VERSION := v2
+DATE := $(shell date '+%Y-%m-%d')
 
 # Utility functions
 check_defined = \
@@ -32,19 +33,19 @@ build: clean
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
 		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
-		xelatex -output-directory=output danpilch-resume.xtx
+		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output danpilch-resume.tex
 
 	# Build DOCX (requires Pandoc in the container)
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
 		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
-		pandoc danpilch-resume.xtx --from=latex -o output/danpilch-resume.docx
+		pandoc danpilch-resume.tex --from=latex --to=docx --standalone --reference-doc=danpilch-resume.dotx -o output/danpilch-resume-${DATE}.docx \
 
 	# Build TXT (requires Pandoc in the container)
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
 		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
-		pandoc danpilch-resume.xtx --from=latex -t plain -o output/danpilch-resume.txt
+		pandoc danpilch-resume.tex --from=latex -t plain -o output/danpilch-resume-${DATE}.txt
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
@@ -63,17 +64,17 @@ release: clean build
 .PHONY: build-local
 build-local: description = Build PDF locally if XeLaTeX is installed
 build-local:
-	xelatex -output-directory=./output danpilch-resume.xtx
+	xelatex -output-directory=./output danpilch-resume.tex
 
 .PHONY: build-docx-local
 build-docx-local: description = Build DOCX locally if Pandoc is installed
 build-docx-local:
-	pandoc danpilch-resume.xtx --from=latex -o output/danpilch-resume.docx
+	pandoc danpilch-resume.tex --from=latex --to=docx --standalone --reference=danpilch-resume.dotx -o output/danpilch-resume.docx
 
 .PHONY: build-txt-local
 build-txt-local: description = Build TXT locally if Pandoc is installed
 build-txt-local:
-	pandoc danpilch-resume.xtx --from=latex -t plain -o output/danpilch-resume.txt
+	pandoc danpilch-resume.tex --from=latex -t plain -o output/danpilch-resume.txt
 
 ### Utility
 

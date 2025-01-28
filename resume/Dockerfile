@@ -12,4 +12,4 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /workspace
 
-CMD ["xelatex", "danpilch_resume.xtx"]
+CMD ["xelatex", "danpilch_resume.tex"]

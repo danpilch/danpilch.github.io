@@ -54,9 +54,9 @@ release: clean build
 	gh release create ${TAG} \
 		--title "Resume Release ${DATE}" \
 		--notes "Release generated on ${DATE}" \
-		output/danpilch-resume_${DATE}.pdf \
-		output/danpilch-resume_${DATE}.docx \
-		output/danpilch-resume_${DATE}.txt
+		output/danpilch-resume-${DATE}.pdf \
+		output/danpilch-resume-${DATE}.docx \
+		output/danpilch-resume-${DATE}.txt
 
 ### Local Build Targets (skip Docker)
 

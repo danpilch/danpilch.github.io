@@ -86,4 +86,4 @@ clean:
 .PHONY: view
 view: description = View generated CV PDF
 view:
-	open ./output/danpilch-resume.pdf
+	open ./output/danpilch-resume-${DATE}.pdf

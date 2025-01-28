@@ -24,34 +24,34 @@ jobs:
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
           docker.io/danpilch/cv-build:v2 \
-          xelatex -output-directory=output danpilch_resume.xtx
+          xelatex -output-directory=output danpilch-resume.xtx
 
         # Build DOCX using Pandoc
         docker run --rm \
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
           docker.io/danpilch/cv-build:v2 \
-          pandoc danpilch_resume.xtx --from=latex -o output/danpilch_resume.docx
+          pandoc danpilch-resume.xtx --from=latex -o output/danpilch-resume.docx
 
         # Build plain text using Pandoc
         docker run --rm \
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
           docker.io/danpilch/cv-build:v2 \
-          pandoc danpilch_resume.xtx --from=latex -t plain -o output/danpilch_resume.txt
+          pandoc danpilch-resume.xtx --from=latex -t plain -o output/danpilch-resume.txt
 
     - name: Rename Files with Date
       run: |
         DATE=$(date +"%Y-%m-%d")
-        mv resume/output/danpilch_resume.pdf  resume/output/danpilch_resume_${DATE}.pdf
-        mv resume/output/danpilch_resume.docx resume/output/danpilch_resume_${DATE}.docx
-        mv resume/output/danpilch_resume.txt  resume/output/danpilch_resume_${DATE}.txt
+        mv resume/output/danpilch-resume.pdf  resume/output/danpilch-resume-${DATE}.pdf
+        mv resume/output/danpilch-resume.docx resume/output/danpilch-resume-${DATE}.docx
+        mv resume/output/danpilch-resume.txt  resume/output/danpilch-resume-${DATE}.txt
 
     - name: Create Unique Git Tag
       id: create_tag
       run: |
         TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
-        TAG="resume-$TIMESTAMP"
+        TAG="resume-${TIMESTAMP}"
         
         git tag "$TAG"
         git push origin "$TAG"
@@ -63,9 +63,9 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ env.tag_name }}
         files: |
-          resume/output/danpilch_resume_*.pdf
-          resume/output/danpilch_resume_*.docx
-          resume/output/danpilch_resume_*.txt
+          resume/output/danpilch-resume-*.pdf
+          resume/output/danpilch-resume-*.docx
+          resume/output/danpilch-resume-*.txt
 
     - name: Notify Success
       run: echo "PDF, DOCX, and TXT generated and attached to release."

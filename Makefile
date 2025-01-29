@@ -32,17 +32,14 @@ build: clean
 	# Build PDF
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
-		docker.io/kjarosh/latex:2024.4-full \
+		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
 		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output resume.tex
 	
-	# Build HTML
+	# Build HTML (requires Pandoc in the container)
 	docker run --rm \
-    		-v ${PWD}:/workspace -w /workspace \
-    		docker.io/kjarosh/latex:2024.4-full \
-	    	make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "lualatex"
-
-	# Set name of html resume
-	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
+		make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 
 	# Cleanup make4ht build files
 	rm -rf *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref
@@ -50,7 +47,7 @@ build: clean
 	# Build TXT (requires Pandoc in the container)
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
-		docker.io/kjarosh/latex:2024.4-full \
+		docker.io/danpilch/cv-build:${CONTAINER_VERSION} \
 		pandoc resume.tex --from=latex -t plain -o output/danpilch-resume-${DATE}.txt
 
 .PHONY: release
@@ -62,7 +59,7 @@ release: clean build
 		--title "Resume Release ${DATE}" \
 		--notes "Release generated on ${DATE}" \
 		output/danpilch-resume-${DATE}.pdf \
-		output/danpilch-resume-${DATE}.html \
+		output/danpilch-resume-${DATE}.docx \
 		output/danpilch-resume-${DATE}.txt
 
 ### Local Build Targets (skip Docker)

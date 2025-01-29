@@ -12,3 +12,6 @@
 *.lg
 *.tmp
 *.xref
+*.aux
+*.docx
+*.txt

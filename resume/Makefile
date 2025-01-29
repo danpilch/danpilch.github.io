@@ -69,7 +69,7 @@ build-local:
 .PHONY: build-docx-local
 build-docx-local: description = Build DOCX locally if Pandoc is installed
 build-docx-local:
-	pandoc danpilch-resume.tex --from=latex --to=docx --standalone --reference=danpilch-resume.dotx -o output/danpilch-resume.docx
+	pandoc danpilch-resume.tex --from=latex --to=docx --standalone --reference=danpilch-resume.dotx -o output/danpilch-resume-${DATE}.docx
 
 .PHONY: build-txt-local
 build-txt-local: description = Build TXT locally if Pandoc is installed

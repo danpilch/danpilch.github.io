@@ -1,0 +1,14 @@
+*.log
+*.pdf
+*.out
+.DS_Store
+*.4ct
+*.4tc
+*.aux
+*.css
+*.dvi
+*.html
+*.idv
+*.lg
+*.tmp
+*.xref

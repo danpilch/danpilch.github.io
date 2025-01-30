@@ -37,9 +37,9 @@ build: clean
 	
 	# Build HTML
 	docker run --rm \
-    		-v ${PWD}:/workspace -w /workspace \
-    		docker.io/kjarosh/latex:2024.4-full \
-	    	make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "lualatex"
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/kjarosh/latex:2024.4-full \
+		make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 
 	# Set name of html resume
 	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html

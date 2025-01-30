@@ -23,29 +23,29 @@ jobs:
         docker run --rm \
           -v ${{ github.workspace }}/resume:/workspace \
           -w /workspace \
-          docker.io/danpilch/cv-build:v2 \
+          docker.io/kjarosh/latex:2024.4-full \
           xelatex -output-directory=output danpilch-resume.tex
 
-        # Build DOCX using Pandoc
-        docker run --rm \
-          -v ${{ github.workspace }}/resume:/workspace \
-          -w /workspace \
-          docker.io/danpilch/cv-build:v2 \
-          pandoc danpilch-resume.tex --from=latex -o output/danpilch-resume.docx
-
-        # Build plain text using Pandoc
-        docker run --rm \
-          -v ${{ github.workspace }}/resume:/workspace \
-          -w /workspace \
-          docker.io/danpilch/cv-build:v2 \
-          pandoc danpilch-resume.tex --from=latex -t plain -o output/danpilch-resume.txt
+#        # Build DOCX using Pandoc
+#        docker run --rm \
+#          -v ${{ github.workspace }}/resume:/workspace \
+#          -w /workspace \
+#          docker.io/kjarosh/latex:2024.4-full \
+#          pandoc danpilch-resume.tex --from=latex -o output/danpilch-resume.docx
+#
+#        # Build plain text using Pandoc
+#        docker run --rm \
+#          -v ${{ github.workspace }}/resume:/workspace \
+#          -w /workspace \
+#          docker.io/kjarosh/latex:2024.4-full \
+#          pandoc danpilch-resume.tex --from=latex -t plain -o output/danpilch-resume.txt
 
     - name: Rename Files with Date
       run: |
         DATE=$(date +"%Y-%m-%d")
         mv resume/output/danpilch-resume.pdf  resume/output/danpilch-resume-${DATE}.pdf
-        mv resume/output/danpilch-resume.docx resume/output/danpilch-resume-${DATE}.docx
-        mv resume/output/danpilch-resume.txt  resume/output/danpilch-resume-${DATE}.txt
+#        mv resume/output/danpilch-resume.docx resume/output/danpilch-resume-${DATE}.docx
+#        mv resume/output/danpilch-resume.txt  resume/output/danpilch-resume-${DATE}.txt
 
     - name: Create Unique Git Tag
       id: create_tag
@@ -64,8 +64,8 @@ jobs:
         tag_name: ${{ env.tag_name }}
         files: |
           resume/output/danpilch-resume-*.pdf
-          resume/output/danpilch-resume-*.docx
-          resume/output/danpilch-resume-*.txt
+#          resume/output/danpilch-resume-*.docx
+#          resume/output/danpilch-resume-*.txt
 
     - name: Notify Success
       run: echo "PDF, DOCX, and TXT generated and attached to release."

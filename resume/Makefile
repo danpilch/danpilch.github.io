@@ -35,23 +35,23 @@ build: clean
 		docker.io/kjarosh/latex:2024.4-full \
 		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output resume.tex
 	
-	# Build HTML
-	docker run --rm \
-		-v ${PWD}:/workspace -w /workspace \
-		docker.io/kjarosh/latex:2024.4-full \
-		make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
-
-	# Set name of html resume
-	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
+#	# Build HTML (not yet working)
+#	docker run --rm \
+#		-v ${PWD}:/workspace -w /workspace \
+#		docker.io/kjarosh/latex:2024.4-full \
+#		make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
+#
+#	# Set name of html resume
+#	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
 
 	# Cleanup make4ht build files
 	rm -rf *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref
 
-	# Build TXT (requires Pandoc in the container)
-	docker run --rm \
-		-v ${PWD}:/workspace -w /workspace \
-		docker.io/kjarosh/latex:2024.4-full \
-		pandoc resume.tex --from=latex -t plain -o output/danpilch-resume-${DATE}.txt
+#	# Build TXT (requires Pandoc in the container)
+#	docker run --rm \
+#		-v ${PWD}:/workspace -w /workspace \
+#		docker.io/kjarosh/latex:2024.4-full \
+#		pandoc resume.tex --from=latex -t plain -o output/danpilch-resume-${DATE}.txt
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
@@ -62,8 +62,9 @@ release: clean build
 		--title "Resume Release ${DATE}" \
 		--notes "Release generated on ${DATE}" \
 		output/danpilch-resume-${DATE}.pdf \
-		output/danpilch-resume-${DATE}.html \
-		output/danpilch-resume-${DATE}.txt
+
+#		output/danpilch-resume-${DATE}.html \
+#		output/danpilch-resume-${DATE}.txt
 
 ### Local Build Targets (skip Docker)
 

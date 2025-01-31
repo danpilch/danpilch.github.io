@@ -32,13 +32,13 @@ build: clean
 	# Build PDF
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
-		docker.io/kjarosh/latex:2024.4-full \
+		docker.io/danpilch/cv-build:v5 \
 		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output resume.tex
 	
 #	# Build HTML (not yet working)
 #	docker run --rm \
 #		-v ${PWD}:/workspace -w /workspace \
-#		docker.io/kjarosh/latex:2024.4-full \
+#		docker.io/danpilch/cv-build:v5 \
 #		make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 #
 #	# Set name of html resume
@@ -50,7 +50,7 @@ build: clean
 #	# Build TXT (requires Pandoc in the container)
 #	docker run --rm \
 #		-v ${PWD}:/workspace -w /workspace \
-#		docker.io/kjarosh/latex:2024.4-full \
+#		docker.io/danpilch/cv-build:v5 \
 #		pandoc resume.tex --from=latex -t plain -o output/danpilch-resume-${DATE}.txt
 
 .PHONY: release

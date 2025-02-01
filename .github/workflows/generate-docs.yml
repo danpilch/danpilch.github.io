@@ -15,7 +15,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Generate PDF, DOCX, and TXT
+    - name: Generate various formats
       run: |
         DATE=$(date +"%Y-%m-%d")
         mkdir -p resume/output

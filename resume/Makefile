@@ -64,7 +64,7 @@ build: clean
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
-release: clean build
+release: clean
 	DATE=$(shell date +%Y-%m-%d)
 	TAG="resume-$(shell date +%Y-%m-%d-%H%M%S)"
 	gh release create ${TAG} \
@@ -72,9 +72,8 @@ release: clean build
 		--notes "Release generated on ${DATE}" \
 		output/danpilch-resume-${DATE}.pdf \
 		output/danpilch-resume-${DATE}.md \
-
-#		output/danpilch-resume-${DATE}.html \
-#		output/danpilch-resume-${DATE}.txt
+		output/danpilch-resume-${DATE}.html \
+		output/danpilch-resume-${DATE}.css
 
 ### Local Build Targets (skip Docker)
 

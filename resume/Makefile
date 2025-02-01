@@ -35,23 +35,32 @@ build: clean
 		docker.io/danpilch/cv-build:v5 \
 		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output resume.tex
 	
-#	# Build HTML (not yet working)
-#	docker run --rm \
-#		-v ${PWD}:/workspace -w /workspace \
-#		docker.io/danpilch/cv-build:v5 \
-#		make4ht -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
-#
-#	# Set name of html resume
-#	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
+	# Build HTML
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:v5 \
+		make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
+
+	# Set name of html resume
+	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
+	mv ./output/resume.css ./output/danpilch-resume-${DATE}.css
 
 	# Cleanup make4ht build files
-	rm -rf *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref
+	rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
 
-#	# Build TXT (requires Pandoc in the container)
-#	docker run --rm \
-#		-v ${PWD}:/workspace -w /workspace \
-#		docker.io/danpilch/cv-build:v5 \
-#		pandoc resume.tex --from=latex -t plain -o output/danpilch-resume-${DATE}.txt
+	# Build Markdown (requires Pandoc in the container)
+	sed -E \
+		-e 's/\\runsubsection\{([^}]*)\}/\\section{\1}/g' \
+		-e 's/\\descript\{\|\s*([^}]*)\}/\\textbf{\1}/g' \
+		-e 's/\\location\{([^}]*)\}/\\emph{\1}/g' \
+		-e 's/tightemize/itemize/g' \
+		-e 's/\\sectionsep//g' \
+  	resume.tex > resume_tmp.tex
+
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:v5 \
+		pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
@@ -62,6 +71,7 @@ release: clean build
 		--title "Resume Release ${DATE}" \
 		--notes "Release generated on ${DATE}" \
 		output/danpilch-resume-${DATE}.pdf \
+		output/danpilch-resume-${DATE}.md \
 
 #		output/danpilch-resume-${DATE}.html \
 #		output/danpilch-resume-${DATE}.txt
@@ -73,17 +83,17 @@ build-local: description = Build PDF locally if XeLaTeX is installed
 build-local:
 	xelatex -output-directory=./output resume.tex
 
-.PHONY: build-txt-local
-build-txt-local: description = Build TXT locally if Pandoc is installed
+.PHONY: build-md-local
+build-txt-local: description = Build md locally if Pandoc is installed
 build-txt-local:
-	pandoc resume.tex --from=latex -t plain -o output/danpilch-resume.txt
+	pandoc -s resume.tex -o output/danpilch-resume.md
 
 ### Utility
 
 .PHONY: clean
 clean: description = Clean build output dir
 clean:
-	rm -rf *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref
+	rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
 	rm -rf ./output/*
 	rm -rf ./.build/*
 

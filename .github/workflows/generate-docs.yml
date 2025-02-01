@@ -17,35 +17,39 @@ jobs:
 
     - name: Generate PDF, DOCX, and TXT
       run: |
+        DATE=$(date +"%Y-%m-%d")
         mkdir -p resume/output
 
         # Build PDF using XeLaTeX
-        docker run --rm \
-          -v ${{ github.workspace }}/resume:/workspace \
-          -w /workspace \
-          docker.io/danpilch/cv-build:v5 \
-          xelatex -output-directory=output resume.tex
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:v5 \
+		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output resume.tex
 
-#        # Build DOCX using Pandoc
-#        docker run --rm \
-#          -v ${{ github.workspace }}/resume:/workspace \
-#          -w /workspace \
-#          docker.io/danpilch/cv-build:v5 \
-#          pandoc resume.tex --from=latex -o output/resume.docx
-#
-#        # Build plain text using Pandoc
-#        docker run --rm \
-#          -v ${{ github.workspace }}/resume:/workspace \
-#          -w /workspace \
-#          docker.io/danpilch/cv-build:v5 \
-#          pandoc resume.tex --from=latex -t plain -o output/resume.txt
+        # Build HTML
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:v5 \
+		make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 
-    - name: Rename Files with Date
-      run: |
-        DATE=$(date +"%Y-%m-%d")
-        mv resume/output/resume.pdf  resume/output/resume-${DATE}.pdf
-#        mv resume/output/resume.docx resume/output/resume-${DATE}.docx
-#        mv resume/output/resume.txt  resume/output/resume-${DATE}.txt
+	# Set name of html resume
+	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
+	mv ./output/resume.css ./output/danpilch-resume-${DATE}.css
+
+	# Build Markdown (requires Pandoc in the container)
+	sed -E \
+		-e 's/\\runsubsection\{([^}]*)\}/\\section{\1}/g' \
+		-e 's/\\descript\{\|\s*([^}]*)\}/\\textbf{\1}/g' \
+		-e 's/\\location\{([^}]*)\}/\\emph{\1}/g' \
+		-e 's/tightemize/itemize/g' \
+		-e 's/\\sectionsep//g' \
+  	resume.tex > resume_tmp.tex
+
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:v5 \
+		pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
+
 
     - name: Create Unique Git Tag
       id: create_tag
@@ -64,8 +68,9 @@ jobs:
         tag_name: ${{ env.tag_name }}
         files: |
           resume/output/resume-*.pdf
-#          resume/output/resume-*.docx
-#          resume/output/resume-*.txt
+          resume/output/resume-*.html
+          resume/output/resume-*.css
+          resume/output/resume-*.md
 
     - name: Notify Success
       run: echo "PDF, DOCX, and TXT generated and attached to release."

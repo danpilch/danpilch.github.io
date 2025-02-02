@@ -42,7 +42,7 @@ build: clean
 		make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 
 	# Cleanup make4ht build files
-	rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
+	#rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
 
 	# Build Markdown (requires Pandoc in the container)
 	sed -E \
@@ -57,6 +57,9 @@ build: clean
 		-v ${PWD}:/workspace -w /workspace \
 		docker.io/danpilch/cv-build:v5 \
 		pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
+
+	# Run clean at the end
+	$(MAKE) clean
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
@@ -84,11 +87,15 @@ build-txt-local:
 ### Utility
 
 .PHONY: clean
-clean: description = Clean build output dir
+clean: description = Clean build dir
 clean:
 	rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
-	rm -rf ./output/*
 	rm -rf ./.build/*
+
+.PHONY: clean-output
+clean-output: description = Clean build dir
+clean-output:
+	rm -rf ./output/*
 
 .PHONY: view
 view: description = View generated CV PDF

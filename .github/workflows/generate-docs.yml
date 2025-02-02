@@ -25,13 +25,13 @@ jobs:
           docker run --rm \
             -v ${PWD}:/workspace -w /workspace \
             docker.io/danpilch/cv-build:v5 \
-            xelatex -jobname=danpilch-resume-${DATE} -output-directory=resume/output resume.tex
+            xelatex -jobname=danpilch-resume-${DATE} -output-directory=resume/output resume/resume.tex
 
           # Build HTML
           docker run --rm \
             -v ${PWD}:/workspace -w /workspace \
             docker.io/danpilch/cv-build:v5 \
-            make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./resume/output/ -l resume.tex "xelatex"
+            make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./resume/output/ -l ./resume/resume.tex "xelatex"
 
           # Set name of HTML and CSS resume
           mv ./resume/output/resume.html ./resume/output/danpilch-resume-${DATE}.html
@@ -44,7 +44,7 @@ jobs:
             -e 's/\\location\{([^}]*)\}/\\emph{\1}/g' \
             -e 's/tightemize/itemize/g' \
             -e 's/\\sectionsep//g' \
-            resume.tex > resume_tmp.tex
+            ./resume/resume.tex > resume_tmp.tex
 
           docker run --rm \
             -v ${PWD}:/workspace -w /workspace \

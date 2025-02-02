@@ -41,10 +41,6 @@ build: clean
 		docker.io/danpilch/cv-build:v5 \
 		make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 
-	# Set name of html resume
-	mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
-	mv ./output/resume.css ./output/danpilch-resume-${DATE}.css
-
 	# Cleanup make4ht build files
 	rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
 
@@ -72,8 +68,6 @@ release: clean
 		--notes "Release generated on ${DATE}" \
 		output/danpilch-resume-${DATE}.pdf \
 		output/danpilch-resume-${DATE}.md \
-		output/danpilch-resume-${DATE}.html \
-		output/danpilch-resume-${DATE}.css
 
 ### Local Build Targets (skip Docker)
 

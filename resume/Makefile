@@ -60,7 +60,7 @@ build: clean
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
-release: clean
+release: clean build
 	DATE=$(shell date +%Y-%m-%d)
 	TAG="resume-$(shell date +%Y-%m-%d-%H%M%S)"
 	gh release create ${TAG} \

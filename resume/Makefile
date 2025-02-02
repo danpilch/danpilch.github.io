@@ -60,14 +60,12 @@ build: clean
 
 .PHONY: release
 release: description = Create a GitHub release for the new version
-release: clean build
+release: clean
 	DATE=$(shell date +%Y-%m-%d)
 	TAG="resume-$(shell date +%Y-%m-%d-%H%M%S)"
 	gh release create ${TAG} \
 		--title "Resume Release ${DATE}" \
 		--notes "Release generated on ${DATE}" \
-		output/danpilch-resume-${DATE}.pdf \
-		output/danpilch-resume-${DATE}.md \
 
 ### Utility
 

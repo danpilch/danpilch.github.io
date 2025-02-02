@@ -55,6 +55,12 @@ build: clean
 		docker.io/danpilch/cv-build:v5 \
 		pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
 
+	# Build docx from markdown
+	docker run --rm \
+		-v ${PWD}:/workspace -w /workspace \
+		docker.io/danpilch/cv-build:v5 \
+		pandoc -s ./output/danpilch-resume-${DATE}.md -o ./output/danpilch-resume-${DATE}.docx
+
 	# Run clean at the end
 	$(MAKE) clean
 

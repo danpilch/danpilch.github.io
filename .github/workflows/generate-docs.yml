@@ -52,6 +52,11 @@ jobs:
             docker.io/danpilch/cv-build:v5 \
             pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
 
+          docker run --rm \
+            -v ${PWD}:/workspace -w /workspace \
+            docker.io/danpilch/cv-build:v5 \
+            pandoc -s ./output/danpilch-resume-${DATE}.md -o ./output/danpilch-resume-${DATE}.docx
+
       - name: Create Unique Git Tag
         id: create_tag
         run: |
@@ -72,6 +77,7 @@ jobs:
             resume/output/danpilch-resume-*.html
             resume/output/danpilch-resume-*.css
             resume/output/danpilch-resume-*.md
+            resume/output/danpilch-resume-*.docx
 
       - name: Notify Success
         run: echo "Resume files generated and attached to release."

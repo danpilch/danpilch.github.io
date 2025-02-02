@@ -17,6 +17,7 @@ jobs:
 
       - name: Generate various formats
         run: |
+          set -e
           DATE=$(date +"%Y-%m-%d")
           mkdir -p resume/output
 

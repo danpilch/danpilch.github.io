@@ -58,11 +58,13 @@ build: clean
 	# Run clean at the end
 	$(MAKE) clean
 
+DATE=$(shell date +%Y-%m-%d)
+TIME=$(shell date +%H%M%S)
+TAG="resume-$(DATE)-$(TIME)"
+
 .PHONY: release
 release: description = Create a GitHub release for the new version
 release: clean
-	DATE=$(shell date +%Y-%m-%d)
-	TAG="resume-$(shell date +%Y-%m-%d-%H%M%S)"
 	gh release create ${TAG} \
 		--title "Resume Release ${DATE}" \
 		--notes "Release generated on ${DATE}"

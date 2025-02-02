@@ -65,7 +65,7 @@ release: clean
 	TAG="resume-$(shell date +%Y-%m-%d-%H%M%S)"
 	gh release create ${TAG} \
 		--title "Resume Release ${DATE}" \
-		--notes "Release generated on ${DATE}" \
+		--notes "Release generated on ${DATE}"
 
 ### Utility
 

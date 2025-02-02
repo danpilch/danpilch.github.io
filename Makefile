@@ -1,6 +1,6 @@
 SERVICE_VERSION ?= $(shell git rev-parse --short HEAD)
 SERVICE_NAME := cv-generator
-CONTAINER_VERSION := v4
+CONTAINER_VERSION := v5
 DATE := $(shell date '+%Y-%m-%d')
 
 # Utility functions

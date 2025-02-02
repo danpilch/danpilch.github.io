@@ -41,9 +41,6 @@ build: clean
 		docker.io/danpilch/cv-build:v5 \
 		make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
 
-	# Cleanup make4ht build files
-	#rm -rf resume.tex.bak resume_tmp.tex *.bak resume_tmp.tex *.aux *.log *.dvi *.4ct *.4tc *.lg *.idv *.tmp *.css *.html *.xref *.md
-
 	# Build Markdown (requires Pandoc in the container)
 	sed -E \
 		-e 's/\\runsubsection\{([^}]*)\}/\\section{\1}/g' \
@@ -71,18 +68,6 @@ release: clean
 		--notes "Release generated on ${DATE}" \
 		output/danpilch-resume-${DATE}.pdf \
 		output/danpilch-resume-${DATE}.md \
-
-### Local Build Targets (skip Docker)
-
-.PHONY: build-local
-build-local: description = Build PDF locally if XeLaTeX is installed
-build-local:
-	xelatex -output-directory=./output resume.tex
-
-.PHONY: build-md-local
-build-txt-local: description = Build md locally if Pandoc is installed
-build-txt-local:
-	pandoc -s resume.tex -o output/danpilch-resume.md
 
 ### Utility
 

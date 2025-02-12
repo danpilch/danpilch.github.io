@@ -62,9 +62,9 @@ jobs:
         run: |
           DATE=$(date +"%Y-%m-%d")
           mv resume/output/danpilch-resume-*.md _posts/*-cv.md
-          mv _posts/*-cv.md _posts/${DATE}-cv.md
+          git mv _posts/*-cv.md _posts/${DATE}-cv.md
 
-      - name: Create Unique Git Tag
+      - name: Create Unique Git Tag and push any changes?
         id: create_tag
         run: |
           TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
@@ -72,6 +72,7 @@ jobs:
           
           git tag "$TAG"
           git push origin "$TAG"
+          git push
           echo "tag_name=$TAG" >> $GITHUB_ENV
 
       - name: Upload All Resumes to Release

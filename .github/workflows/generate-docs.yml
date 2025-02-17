@@ -3,7 +3,7 @@ name: Generate Resume & Create Release
 on:
   push:
     paths:
-      - "resume/**"
+      - "resume/**"  # Trigger when files in the resume directory are updated
   workflow_dispatch:
 
 jobs:
@@ -14,41 +14,57 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          persist-credentials: true
 
       - name: Generate various formats
         run: |
-          # ... your build steps ...
-      
+          set -e
+          DATE=$(date +"%Y-%m-%d")
+          mkdir -p resume/output
+          cd resume
+          # Build PDF using XeLaTeX
+          docker run --rm \
+            -v ${PWD}:/workspace -w /workspace \
+            docker.io/danpilch/cv-build:v5 \
+            xelatex -jobname=danpilch-resume-${DATE} -output-directory=./output resume.tex
+          # Build HTML
+          docker run --rm \
+            -v ${PWD}:/workspace -w /workspace \
+            docker.io/danpilch/cv-build:v5 \
+            make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
+          # Set name of HTML and CSS resume
+          mv ./output/resume.html ./output/danpilch-resume-${DATE}.html
+          mv ./output/resume.css ./output/danpilch-resume-${DATE}.css
+          # Build Markdown (requires Pandoc in the container)
+          sed -E \
+            -e 's/\\runsubsection\{([^}]*)\}/\\section{\1}/g' \
+            -e 's/\\descript\{\|\s*([^}]*)\}/\\textbf{\1}/g' \
+            -e 's/\\location\{([^}]*)\}/\\emph{\1}/g' \
+            -e 's/tightemize/itemize/g' \
+            -e 's/\\sectionsep//g' \
+            ./resume.tex > resume_tmp.tex
+          docker run --rm \
+            -v ${PWD}:/workspace -w /workspace \
+            docker.io/danpilch/cv-build:v5 \
+            pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
+          docker run --rm \
+            -v ${PWD}:/workspace -w /workspace \
+            docker.io/danpilch/cv-build:v5 \
+            pandoc -s ./output/danpilch-resume-${DATE}.md -o ./output/danpilch-resume-${DATE}.docx
       - name: Replace resume in _posts directory
+        id: replace_resume
         run: |
           DATE=$(date +"%Y-%m-%d")
           mv resume/output/danpilch-resume-*.md _posts/*-cv.md
-          git mv _posts/*-cv.md _posts/${DATE}-cv.md
-
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-
-      - name: Commit changes
-        run: |
-          git add _posts
-          git commit -m "Update resume with new date" || echo "No changes to commit"
-
-      - name: Push changes to master
-        run: git push origin HEAD:master
-
-      - name: Create Unique Git Tag and push
+          mv _posts/*-cv.md _posts/${DATE}-cv.md
+      - name: Create Unique Git Tag
+        id: create_tag
         run: |
           TIMESTAMP=$(date +"%Y-%m-%d-%H%M%S")
           TAG="resume-${TIMESTAMP}"
+          
           git tag "$TAG"
           git push origin "$TAG"
           echo "tag_name=$TAG" >> $GITHUB_ENV
-
       - name: Upload All Resumes to Release
         uses: softprops/action-gh-release@v1
         with:
@@ -60,6 +76,5 @@ jobs:
             resume/output/danpilch-resume-*.css
             resume/output/danpilch-resume-*.md
             resume/output/danpilch-resume-*.docx
-
       - name: Notify Success
         run: echo "Resume files generated and attached to release."

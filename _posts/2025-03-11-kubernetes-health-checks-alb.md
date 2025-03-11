@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kubernetes Health Checks and ALB - Lessons Learned the Hard Way 
-last_updated: 2021-02-09
+last_updated: 2025-03-11
 category: community
 ---
 

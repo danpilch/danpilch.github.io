@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Debugging a Slow `/usr/bin/login` on macOS (WIP) 
+title: Debugging a Slow /usr/bin/login on macOS (WIP) 
 last_updated: 2025-04-02
 category: personal
 ---
 
-# Debugging a Slow `/usr/bin/login` on macOS (WIP)
+# Debugging a Slow /usr/bin/login on macOS (WIP)
 
 > Work-in-progress notes on figuring out why `/usr/bin/login` is painfully slow on my MacBook (Apple Silicon, arm64).
 
 ## 🤔 The Problem
 
-I've noticed that terminal sessions using `/usr/bin/login` are significantly slower than expected. This impacts not just Terminal.app and iTerm2, but also remote logins and automated scripts that rely on login shells.
+A couple of days ago I noticed that terminal sessions using `/usr/bin/login` are significantly slower than expected and take 13 minutes to start. This impacts not just Terminal.app and iTerm2, but does not affect `vs code` terminal sessions... 
 
 ## 📍 Initial Observations
 
@@ -26,6 +26,7 @@ Ran the following to trace shell init:
 ```sh
 zsh -i -x -c exit
 ```
+
 Findings:
 - Several slow steps during plugin or theme loading (suspect `oh-my-zsh`, Homebrew init, etc.)
 - Will try commenting out `.zshrc` sections and testing incrementally

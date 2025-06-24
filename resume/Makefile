@@ -32,35 +32,9 @@ build: clean
 	# Build PDF
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
-		docker.io/danpilch/cv-build:v5 \
-		xelatex -jobname=danpilch-resume-${DATE} -output-directory=output resume.tex
+		docker.io/danpilch/cv-build:v6 \
+            	typst compile resume.typ danpilch-resume-${DATE}.pdf
 	
-	# Build HTML
-	docker run --rm \
-		-v ${PWD}:/workspace -w /workspace \
-		docker.io/danpilch/cv-build:v5 \
-		make4ht --utf8 -a debug -B .build -f html5+inlinecss --output-dir ./output/ -l resume.tex "xelatex"
-
-	# Build Markdown (requires Pandoc in the container)
-	sed -E \
-		-e 's/\\runsubsection\{([^}]*)\}/\\section{\1}/g' \
-		-e 's/\\descript\{\|\s*([^}]*)\}/\\textbf{\1}/g' \
-		-e 's/\\location\{([^}]*)\}/\\emph{\1}/g' \
-		-e 's/tightemize/itemize/g' \
-		-e 's/\\sectionsep//g' \
-  	resume.tex > resume_tmp.tex
-
-	docker run --rm \
-		-v ${PWD}:/workspace -w /workspace \
-		docker.io/danpilch/cv-build:v5 \
-		pandoc -s resume_tmp.tex -o ./output/danpilch-resume-${DATE}.md
-
-	# Build docx from markdown
-	docker run --rm \
-		-v ${PWD}:/workspace -w /workspace \
-		docker.io/danpilch/cv-build:v5 \
-		pandoc -s ./output/danpilch-resume-${DATE}.md -o ./output/danpilch-resume-${DATE}.docx
-
 	# Run clean at the end
 	$(MAKE) clean
 

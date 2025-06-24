@@ -1,3 +1,3 @@
-FROM docker.io/kjarosh/latex:2024.4-full
+FROM alpine:3.22 
 
-RUN apk update && apk --no-cache add pandoc
+RUN apk update && apk --no-cache add typst

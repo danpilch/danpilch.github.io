@@ -33,7 +33,7 @@ build: clean
 	docker run --rm \
 		-v ${PWD}:/workspace -w /workspace \
 		docker.io/danpilch/cv-build:v6 \
-            	typst compile resume.typ danpilch-resume-${DATE}.pdf
+            	typst compile resume.typ ./output/danpilch-resume-${DATE}.pdf
 	
 	# Run clean at the end
 	$(MAKE) clean

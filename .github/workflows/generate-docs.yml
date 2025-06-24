@@ -25,7 +25,7 @@ jobs:
           docker run --rm \
             -v ${PWD}:/workspace -w /workspace \
             docker.io/danpilch/cv-build:v6 \
-            typst compile resume.typ danpilch-resume-${DATE}.pdf
+            typst compile resume.typ ./output/danpilch-resume-${DATE}.pdf
       - name: Create Unique Git Tag
         id: create_tag
         run: |

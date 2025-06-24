@@ -3,7 +3,7 @@
 #show heading: set text(font: "libertinus serif")
 #show link: underline
 
-// #set text(size: 11pt)
+#set text(size: 10pt)
 
 #set page(
   margin: (x: 0.9cm, y: 1.3cm),
@@ -42,7 +42,7 @@ Builder and engineering leader with 13+ years designing, scaling, and operating 
 == Education
 #chiline()
 
-*University of Portsmouth* \
+#link("https://www.port.ac.uk/")[*University of Portsmouth*] \
 Computer Network Management and Design BSc (Hons) \
 - First Class Honours (UK equivalent to GPA 4.0) \
 - Winner of The School of Engineering Top Dissertation Project - 1st Place
@@ -50,7 +50,7 @@ Computer Network Management and Design BSc (Hons) \
 == Work Experience
 #chiline()
 
-*Community.com* #h(1fr) September 2020 -- Present \
+#link("https://www.community.com/")[*Community.com*] #h(1fr) September 2020 -- Present \
 Staff Platform Engineer #h(1fr) _Remote, UK_ \
 - Led the zero-downtime migration of 150+ microservices from Apache Mesos (EC2) to Kubernetes (EKS), running both platforms in parallel using our custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery layer to enable seamless cutover and instant rollback.
 - Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
@@ -61,31 +61,37 @@ Staff Platform Engineer #h(1fr) _Remote, UK_ \
 - Driving SOC 2 Type 2 audit preparation, implementing infrastructure controls, access policies, and internal security processes to align with compliance standards.
 - Developed self-service infrastructure provisioning with Terraform and Ansible, and deployed highly available RabbitMQ clusters in Kubernetes and backed by HAProxy to ensure robust messaging and load distribution.
 
-*Nomura* #h(1fr) May 2020 -- August 2020 \
+#link("https://www.nomura.com/")[*Nomura*] #h(1fr) May 2020 -- August 2020 \
 VP Cloud Engineering #h(1fr) _Remote, UK_ \
 - Contributed to the design and provisioning of core banking network infrastructure, including AWS DirectConnect, BGP, and VPC peering, using Terraform, Ansible, and Python to support secure, high-performance cloud connectivity.
 
-*Westpac New Zealand* #h(1fr) December 2018 -- November 2019 \
+#link("https://www.westpac.co.nz/")[*Westpac New Zealand*] #h(1fr) December 2018 -- November 2019 \
 Senior Platform Engineer #h(1fr) _Auckland, New Zealand_ \
 - Designed and implemented a fraud data processing platform using Kafka, Spark, Hadoop, Hive, and Airflow on Kubernetes. Integrated IBM MQ mainframe queues with Kafka to enable real-time fraud detection and transaction monitoring. Maintained and optimised Airflow pipelines for reliability and performance.
 
-*Bitcoin.com.au* #h(1fr) November 2017 -- October 2018 \
+#link("https://bitcoin.com.au/")[*Bitcoin.com.au*] #h(1fr) November 2017 -- October 2018 \
 DevOps Engineer #h(1fr) _Melbourne, Australia_ \
 - Rebuilt the company’s cloud infrastructure from scratch, migrating to AWS using Terraform, Ansible, and Docker. Established isolated environments with new accounts, VPCs, and security best practices.
 - Introduced GitLab and CI/CD pipelines to replace a previously unmanaged codebase, enabling version control, team collaboration, and safer deployments.
 - Hardened platform during active DDoS attacks by implementing Cloudflare protections, and deployed highly available `bitcoind` nodes to ensure uptime and service reliability.
 
-*PPL UK* #h(1fr) July 2016 -- October 2017 \
+#link("https://www.ppluk.com/")[*PPL UK*] #h(1fr) July 2016 -- October 2017 \
 DevOps Engineer #h(1fr) _London, UK_ \
 - Led DevOps efforts during a major digital transformation initiative, modernising infrastructure with Apache Hadoop, AWS CloudFormation, and Docker in close collaboration with senior leadership.
 - Rebuilt and automated the deployment of multiple Oracle WebLogic services using Selenium and Ansible, replacing fragile manual processes with reliable, repeatable pipelines.
 - Developed an internal self-service platform using Rundeck, enabling non-technical teams to safely execute operational tasks and improving engineering efficiency.
 
-*Incopro* #h(1fr) May 2013 -- July 2016 \
+#link("https://corsearch.com/incopro/")[*Incopro*] #h(1fr) May 2013 -- July 2016 \
 Platform Engineer #h(1fr) _London, UK_ \
+- Successfully acquired by Corsearch.
 - Founding engineer at Incopro, built and scaled a distributed web scraping system using Selenium, Ansible, and residential proxies to monitor 1,000+ websites for trademark infringement.
 - Designed and deployed data infrastructure using Cassandra and Elasticsearch to ingest and query gigabytes of scraped data daily for content protection and enforcement.
 - Automated deployment and configuration of 500+ servers with Ansible, enabling scalable, reliable operations across a rapidly growing data platform.
+
+#link("https://www.warnerbros.co.uk/")[*Warner Bros*] #h(1fr) July 2011 -- August 2012 \ 
+Anti-Piracy Intern #h(1fr) _London, UK_
+- Automated web scraping over hundreds of top sites and "cyberlockers" finding Warner Bro's copyrighted content.
+- Managed the servers that ran webscrapers in colocated datacentres.
 
 == Technical Skills
 #chiline()
@@ -98,7 +104,8 @@ Platform Engineer #h(1fr) _London, UK_ \
 - Drata, OpenVPN, WireGuard, Tailscale, HAProxy, Envoy, Kong, IAM, VPC, Cloudflare
 *Databases & Messaging*
 - PostgreSQL, Cassandra, MariaDB, DynamoDB, Trino, Athena, RabbitMQ, Elasticache, Elasticsearch, Redis, Prometheus, DuckDB
-*DevOps & Monitoring* Git, Concourse, NewRelic, SumoLogic, AppSignal, PagerDuty, Jenkins
+*DevOps & Monitoring*
+- Git, Concourse, NewRelic, SumoLogic, AppSignal, PagerDuty, Jenkins
 *Linux System Administration*
 - Ubuntu, Debian, Alpine, CentOS, NixOS
 *Machine Learning & AI*

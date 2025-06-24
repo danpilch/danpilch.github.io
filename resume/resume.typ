@@ -55,7 +55,7 @@ Staff Platform Engineer #h(1fr) _Remote, UK_ \
 - Led the zero-downtime migration of 150+ microservices from Apache Mesos (EC2) to Kubernetes (EKS), running both platforms in parallel using our custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery layer to enable seamless cutover and instant rollback.
 - Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
 - Own platform strategy, architecture, and operations, working closely with executive leadership to scale infrastructure while optimising for cost and reliability.
-- Created a Go-based Slack bot leveraging AI to automate runbook retrieval and on-call context, reducing friction during incidents and slashing response time.
+- Created a Go-based Slack bot leveraging OpenAI `GPT-4o` to automate runbook retrieval with simple vector RAG and insert on-call context, reducing friction during incidents and slashing response time.
 - Optimised cloud infrastructure, maintaining a 99.5% uptime SLA while simplifying systems and reducing complexity.
 - Drove a 33% annual reduction in cloud costs (~\$320K/year) by implementing spend controls, cost-aware policies, and systematic workload rightsizing across environments.
 - Driving SOC 2 Type 2 audit preparation, implementing infrastructure controls, access policies, and internal security processes to align with compliance standards.

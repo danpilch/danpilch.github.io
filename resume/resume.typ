@@ -113,6 +113,8 @@ Anti-Piracy Intern #h(1fr) _London, UK_
 
 == Open-Source Contributions
 #chiline()
+*agno* #link("https://github.com/agno-agi/agno")[github.com/agno-agi/agno] #h(1fr) Since 2025
+- Regular feature committer to `agno`. Agno is a full-stack framework for building Multi-Agent Systems with memory, knowledge and reasoning.
 *sidecar* #link("https://github.com/NinesStack/sidecar")[github.com/NinesStack/sidecar] #h(1fr) Since 2023
 - Sidecar is a dynamic service discovery platform requiring no external coordination service. It's a peer-to-peer system that uses a gossip protocol for all communication between hosts. Sidecar predates most modern service discovery systems and was originally developed at NewRelic.
 - Community currently uses sidecar as service discovery in Kubernetes, I maintain the project with new features and maintenance releases as and when required.

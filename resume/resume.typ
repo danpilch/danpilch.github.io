@@ -53,12 +53,12 @@ Computer Network Management and Design BSc (Hons) \
 #link("https://www.community.com/")[*Community.com*] #h(1fr) September 2020 -- Present \
 Staff Platform Engineer #h(1fr) _Remote, USA_ \
 - Led the zero-downtime migration of 150+ microservices serving 5M+ unique external client API requests daily from Apache Mesos (EC2) to Kubernetes (EKS), running both platforms in parallel using our custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery layer to enable seamless cutover and instant rollback.
-- Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
-- Maintained event-driven platform processing 142+ million events monthly (113M message events, 15M entity events, 11M command and 3M metric events) using RabbitMQ clusters and Protobuf schemas, ensuring reliable message delivery across distributed microservices architecture.
+- Drove a 33% annual reduction in cloud costs (~\$320K/year) by implementing spend controls, cost-aware policies, and systematic workload rightsizing across environments.
+- Maintain the event-driven platform processing 142+ million events monthly (113M message events, 15M entity events, 11M command and 3M metric events) using RabbitMQ clusters and Protobuf schemas, ensuring reliable message delivery across distributed microservices architecture.
 - Own platform strategy, architecture, and operations, working closely with executive leadership to scale infrastructure while optimising for cost and reliability.
+- Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
 - Created a Go-based Slack bot leveraging OpenAI `GPT-4o` to automate runbook retrieval with simple vector RAG and insert on-call context, reducing friction during incidents and slashing response time.
 - Optimised cloud infrastructure, maintaining a 99.5% uptime SLA while simplifying systems and reducing complexity.
-- Drove a 33% annual reduction in cloud costs (~\$320K/year) by implementing spend controls, cost-aware policies, and systematic workload rightsizing across environments.
 - Driving SOC 2 Type 2 audit preparation, implementing infrastructure controls, access policies, and internal security processes to align with compliance standards.
 - Developed self-service infrastructure provisioning with Terraform and Ansible, and deployed highly available RabbitMQ clusters in Kubernetes and backed by HAProxy to ensure robust messaging and load distribution.
 

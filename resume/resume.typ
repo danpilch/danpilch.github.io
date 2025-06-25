@@ -122,7 +122,7 @@ Anti-Piracy Intern #h(1fr) _London, UK_
 - Sidecar is a dynamic service discovery platform requiring no external coordination service. It's a peer-to-peer system that uses a gossip protocol for all communication between hosts. Sidecar predates most modern service discovery systems and was originally developed at NewRelic.
 - Community currently uses sidecar as service discovery in Kubernetes, I maintain the project with new features and maintenance releases as and when required.
 *nmesos-k8s* #link("https://github.com/NinesStack/nmesos-k8s")[github.com/NinesStack/nmesos-k8s] #h(1fr) Since 2023
-- Maintain community.com's internal version of the deployment tool to abstract simple YAML deployment manifests into complex Kubernetes objects and deploy (we open sourced the project to the `NinesStack` Github organisation). 
+-  A lightweight CLI written in Ruby that enables smooth migration for teams moving from Mesos to Kubernetes by reusing existing nmesos service definitions. (We open sourced the project to the `NinesStack` Github organisation). 
 
 == Certifications
 #chiline()

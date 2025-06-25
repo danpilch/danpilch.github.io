@@ -54,7 +54,7 @@ Computer Network Management and Design BSc (Hons) \
 Staff Platform Engineer #h(1fr) _Remote, USA_ \
 - Led the zero-downtime migration of 150+ microservices serving 5M+ unique external client API requests daily from Apache Mesos (EC2) to Kubernetes (EKS), running both platforms in parallel using our custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery layer to enable seamless cutover and instant rollback.
 - Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
-- Maintained event-driven platform processing 130+ million events monthly (113M message events, 15M entity events, 3M metric events) using RabbitMQ clusters and Protobuf schemas, ensuring reliable message delivery across distributed microservices architecture.
+- Maintained event-driven platform processing 142+ million events monthly (113M message events, 15M entity events, 11M command and 3M metric events) using RabbitMQ clusters and Protobuf schemas, ensuring reliable message delivery across distributed microservices architecture.
 - Own platform strategy, architecture, and operations, working closely with executive leadership to scale infrastructure while optimising for cost and reliability.
 - Created a Go-based Slack bot leveraging OpenAI `GPT-4o` to automate runbook retrieval with simple vector RAG and insert on-call context, reducing friction during incidents and slashing response time.
 - Optimised cloud infrastructure, maintaining a 99.5% uptime SLA while simplifying systems and reducing complexity.

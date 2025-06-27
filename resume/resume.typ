@@ -3,7 +3,7 @@
 #show heading: set text(font: "libertinus serif")
 #show link: underline
 
-#set text(size: 9.5pt)
+#set text(size: 9pt)
 
 #set page(
   margin: (x: 0.9cm, y: 1.3cm),
@@ -57,10 +57,12 @@ Staff Platform Engineer #h(1fr) _Remote, USA_ \
 - Maintain the event-driven platform processing 142+ million events monthly (113M message events, 15M entity events, 11M command and 3M metric events) using RabbitMQ clusters and Protobuf schemas, ensuring reliable message delivery across distributed microservices architecture.
 - Own platform strategy, architecture, and operations, working closely with executive leadership to scale infrastructure while optimising for cost and reliability.
 - Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
+- Administer AWS cloud infrastructure spanning EKS, EC2 auto-scaling, VPC networking, RDS and managing Linux systems with automated patching, monitoring, and Packer-based AMI builds integrated into CI/CD pipelines for immutable infrastructure and security compliance.
+- Built Trino clusters operating on Kubernetes with data source catalogs integrating PostgreSQL and S3 enabling cross-data-source SQL querying via REST API for frontend applications to calculate subscription metrics in real-time averaging 150,000 daily queries.
 - Created a Go-based Slack bot leveraging OpenAI `GPT-4o` to automate runbook retrieval with simple vector RAG and insert on-call context, reducing friction during incidents and slashing response time.
 - Optimised cloud infrastructure, maintaining a 99.5% uptime SLA while simplifying systems and reducing complexity.
-- Driving SOC 2 Type 2 audit preparation, implementing infrastructure controls, access policies, and internal security processes to align with compliance standards.
 - Developed self-service infrastructure provisioning with Terraform and Ansible, and deployed highly available RabbitMQ clusters in Kubernetes and backed by HAProxy to ensure robust messaging and load distribution.
+- Currently driving SOC 2 Type 2 audit preparation, implementing infrastructure controls, access policies, and internal security processes to align with compliance standards.
 
 #link("https://www.nomura.com/")[*Nomura*] #h(1fr) May 2020 -- August 2020 \
 VP Cloud Engineering #h(1fr) _Remote, UK_ \

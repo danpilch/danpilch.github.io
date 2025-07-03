@@ -93,14 +93,14 @@ Platform Engineer #h(1fr) _London, UK_ \
 
 #link("https://www.warnerbros.co.uk/")[*Warner Bros*] #h(1fr) July 2011 -- August 2012 \ 
 Anti-Piracy Intern #h(1fr) _London, UK_
-- Automated web scraping over hundreds of top sites and "cyberlockers" finding Warner Bro's copyrighted content.
+- Automated web scraping over hundreds of top sites and "cyberlockers" finding Warner Bros copyrighted content.
 - Managed the servers that ran webscrapers in colocated datacentres.
 
 == Technical Skills
 #chiline()
 
 *Technical Methodologies*
-- CI/CD, GitOps, Infrastructure as Code (IaC), Site Reliability Engineering (SRE), Observability, Microservices, Service Mesh, API Gateway, Cloud Migration, Incident Response, On-call, Cost Optimization, FinOps
+- CI/CD, GitOps, Infrastructure as Code (IaC), DevOps, Site Reliability Engineering (SRE), Observability, Microservices, Service Mesh, API Gateway, Cloud Migration, Incident Response, On-call, Cost Optimization, FinOps
 *Software Engineering*
 - Python, Golang, Elixir (intermediate), Ruby, Bash
 *Infrastructure (IaC) & Cloud*
@@ -109,12 +109,14 @@ Anti-Piracy Intern #h(1fr) _London, UK_
 - Drata, OpenVPN, WireGuard, Tailscale, HAProxy, Envoy, Kong, IAM, VPC, Cloudflare
 *Databases & Messaging*
 - PostgreSQL, Cassandra, MariaDB, DynamoDB, Trino, Athena, RabbitMQ, Elasticache, Elasticsearch, Redis, Prometheus, DuckDB, Protobuf
-*DevOps & Monitoring*
-- Git, Concourse, NewRelic, SumoLogic, AppSignal, PagerDuty, Jenkins
+*CI & Monitoring*
+- Git, Concourse, NewRelic, SumoLogic, AppSignal, PagerDuty, Jenkins, Sentry
 *Linux System Administration*
 - Ubuntu, Debian, Alpine, CentOS, NixOS
 *Machine Learning & AI*
 - PyTorch, TensorFlow, OpenAI, Groq, Cursor, Windsurf, Databricks, Temporal, Agno, HuggingFace, llama.cpp
+
+#text(size: 7pt)[_Note: this list is mostly for ATS systems._]
 
 == Open-Source Contributions
 #chiline()

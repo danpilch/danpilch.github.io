@@ -125,6 +125,8 @@ Anti-Piracy Intern #h(1fr) _London, UK_
 - Community currently uses sidecar as service discovery in Kubernetes, I maintain the project with new features and maintenance releases as and when required.
 *nmesos-k8s* #link("https://github.com/NinesStack/nmesos-k8s")[github.com/NinesStack/nmesos-k8s] #h(1fr) Since 2023
 -  A lightweight CLI written in Ruby that enables smooth migration for teams moving from Mesos to Kubernetes by reusing existing nmesos service definitions. (We open sourced the project to the `NinesStack` Github organisation). 
+*pd-report* #link("https://github.com/danpilch/pd-report")[github.com/danpilch/pd-report] #h(1fr) Since 2025
+- `pd-report` is a command-line tool that generates an executive summary and analysis of the past month's PagerDuty incidents. It fetches incident data from PagerDuty, analyses trends and metrics using OpenAI's GPT-4.1, and outputs a concise, markdown-formatted report suitable for leadership review.
 
 == Certifications
 #chiline()

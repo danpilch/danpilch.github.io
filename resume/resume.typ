@@ -52,17 +52,17 @@ Computer Network Management and Design BSc (Hons) \
 
 #link("https://www.community.com/")[*Community.com*] #h(1fr) September 2020 -- Present \
 Staff Platform Engineer #h(1fr) _Remote, USA_ \
-- Led the zero-downtime migration of 150+ microservices serving 5M+ unique external client API requests daily from Apache Mesos (EC2) to Kubernetes (EKS), running both platforms in parallel using our custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery layer to enable seamless cutover and instant rollback.
-- Drove a 33% annual reduction in cloud costs (~\$320K/year) by implementing spend controls, cost-aware policies, and systematic workload rightsizing across environments.
-- Maintain the event-driven platform processing 142+ million events monthly (113M message events, 15M entity events, 11M command and 3M metric events) using RabbitMQ, ensuring reliable message delivery across distributed microservices architecture.
-- Own platform strategy, architecture, and operations, working closely with executive leadership to scale infrastructure while optimising for cost and reliability.
-- Built a customer support knowledgebase as an in-product popup chat component using LLM-based RAG with Agno, CopilotKit, Python and React, implementing vector search and real-time query processing for accurate company-related answers.
-- Administer AWS cloud infrastructure spanning EKS, EC2 auto-scaling, VPC networking, RDS and managing Linux systems with automated patching, monitoring, and Packer-based AMI builds integrated into CI/CD pipelines for immutable infrastructure and security compliance.
-- Built Trino clusters operating on Kubernetes with data source catalogs integrating PostgreSQL and S3 enabling cross-data-source SQL querying via REST API for frontend applications to calculate subscription metrics in real-time averaging 150,000 daily queries.
-- Created a Go-based Slack bot leveraging OpenAI `GPT-4o` to automate runbook retrieval with simple vector RAG and insert on-call context, reducing friction during incidents and slashing response time.
-- Optimised cloud infrastructure, maintaining a 99.5% uptime SLA while simplifying systems and reducing complexity.
-- Developed self-service infrastructure provisioning with Terraform and Ansible, and deployed highly available RabbitMQ clusters in Kubernetes and backed by HAProxy to ensure robust messaging and load distribution.
-- Currently driving SOC 2 Type 2 audit preparation, implementing infrastructure controls, access policies, and internal security processes to align with compliance standards.
+- Led zero-downtime migration of 150+ microservices serving 5M+ daily API requests from Apache Mesos to Kubernetes (EKS), running both platforms in parallel using custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery for seamless cutover and instant rollback.
+- Drove 33% annual reduction in cloud costs (~\$320K/year) through spend controls, cost-aware policies, and systematic workload rightsizing, while maintaining 99.5% uptime SLA.
+- Architect and operate highly available RabbitMQ clusters on Kubernetes backed by HAProxy, powering the event-driven platform that processes 430M+ events monthly (messages, entities, commands, metrics) across distributed microservices.
+- Own platform strategy and architecture, partnering with executive leadership to scale infrastructure, define technical roadmaps, and balance cost with reliability.
+- Built Trino clusters on Kubernetes integrating PostgreSQL and S3 data sources, enabling cross-source SQL querying via REST API for real-time subscription metrics (2M+ daily queries).
+- Developed self-service infrastructure provisioning with Terraform and Ansible, reducing deployment friction and enabling engineering teams to ship faster.
+- Built #link("https://github.com/NinesStack/nmesos-k8s")[nmesos-k8s], a Ruby CLI enabling developers to deploy services to Kubernetes using familiar Mesos configurations, accelerating adoption and reducing migration friction across 150+ microservices.
+- Took ownership of Databricks/Spark data pipelines after data engineering team departure, maintaining and upgrading batch processing jobs for event snapshots, parquet compaction, and analytics.
+- Created Go-based Slack bot leveraging OpenAI GPT-4o for automated runbook retrieval with vector RAG, injecting on-call context to reduce incident response time.
+- Built Temporal workflow orchestration platform from scratch, initially on EC2, later migrated to EKS with RDS and Elasticsearch backends, schema migrations, Prometheus metrics, and production runbooks.
+- Led SOC 2 Type 1 certification to completion; currently driving Type 2 audit, implementing infrastructure controls, access policies, and security processes.
 
 #link("https://www.nomura.com/")[*Nomura*] #h(1fr) May 2020 -- August 2020 \
 VP Cloud Engineering #h(1fr) _Remote, UK_ \
@@ -99,27 +99,21 @@ Anti-Piracy Intern #h(1fr) _London, UK_
 == Technical Skills
 #chiline()
 
-*Technical Methodologies*
-- CI/CD, GitOps, Infrastructure as Code (IaC), DevOps, Site Reliability Engineering (SRE), Observability, Microservices, Service Mesh, API Gateway, Cloud Migration, Incident Response, On-call, Cost Optimization, FinOps
-*Software Engineering*
-- Python, Golang, Elixir (intermediate), Ruby, Bash
-*Infrastructure (IaC) & Cloud*
-- Kubernetes, Docker, Helm, Containerd, Podman, AWS, GCP, Azure, Linux/UNIX, Terraform, Ansible, Packer, Vagrant
-*Networking & Security*
-- Drata, OpenVPN, WireGuard, Tailscale, HAProxy, Envoy, Kong, IAM, VPC, Cloudflare
-*Databases & Messaging*
-- PostgreSQL, Cassandra, MariaDB, DynamoDB, Trino, Athena, RabbitMQ, Elasticache, Elasticsearch, Redis, Prometheus, DuckDB, Protobuf
-*CI & Monitoring*
-- Git, Concourse, NewRelic, SumoLogic, AppSignal, PagerDuty, Jenkins, Sentry
-*Linux System Administration*
-- Ubuntu, Debian, Alpine, CentOS, NixOS
-*Machine Learning & AI*
-- PyTorch, TensorFlow, OpenAI, Groq, Cursor, Windsurf, Databricks, Temporal, Agno, HuggingFace, llama.cpp
+*Practices:* SRE, DevOps, GitOps, IaC, FinOps, CI/CD, Observability, Incident Response, Cloud Migration, Cost Optimization |
+*Languages:* Python, Golang, Elixir, Ruby, Bash |
+*Infrastructure & Cloud:* Kubernetes, Docker, Helm, Containerd, Podman, AWS, GCP, Azure, Linux/UNIX, Terraform, Ansible, Packer, Vagrant |
+*Networking & Security:* Drata, OpenVPN, WireGuard, Tailscale, HAProxy, Envoy, Kong, IAM, VPC, Cloudflare |
+*Data & Messaging:* PostgreSQL, Cassandra, MariaDB, DynamoDB, Trino, Athena, RabbitMQ, Elasticache, Elasticsearch, Redis, Prometheus, DuckDB, Protobuf, Redpanda-Connect(benthos) |
+*CI & Observability:* Git, Concourse, NewRelic, SumoLogic, AppSignal, PagerDuty, Jenkins, Sentry, Grafana, eBPF |
+*Linux:* Ubuntu, Debian, Alpine, CentOS, NixOS |
+*AI/ML:* PyTorch, TensorFlow, OpenAI, Groq, Databricks, Temporal, Agno, HuggingFace, llama.cpp
 
 #text(size: 7pt)[_Note: this list is mostly for ATS systems._]
 
 == Open-Source Contributions
 #chiline()
+*logtailer* #link("https://github.com/NinesStack/logtailer")[github.com/NinesStack/logtailer] #h(1fr) Since 2023
+- Kubernetes DaemonSet utility written in Go that selectively discovers and tails pod logs via annotations, forwarding them to UDP syslog with built-in rate limiting. Prevents runaway logging from overwhelming infrastructure and controls observability costs by shipping logs only from annotated services.
 *agno* #link("https://github.com/agno-agi/agno")[github.com/agno-agi/agno] #h(1fr) Since 2025
 - Regular feature committer to `agno`. Agno is a full-stack framework for building Multi-Agent Systems with memory, knowledge and reasoning.
 *sidecar* #link("https://github.com/NinesStack/sidecar")[github.com/NinesStack/sidecar] #h(1fr) Since 2023

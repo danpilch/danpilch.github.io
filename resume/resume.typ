@@ -55,6 +55,7 @@ Staff Platform Engineer #h(1fr) _Remote, USA_ \
 - Led zero-downtime migration of 150+ microservices serving 5M+ daily API requests from Apache Mesos to Kubernetes (EKS), running both platforms in parallel using custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery for seamless cutover and instant rollback.
 - Drove 33% annual reduction in cloud costs (~\$320K/year) through spend controls, cost-aware policies, and systematic workload rightsizing, while maintaining 99.5% uptime SLA.
 - Architect and operate highly available RabbitMQ clusters on Kubernetes backed by HAProxy, powering the event-driven platform that processes 430M+ events monthly (messages, entities, commands, metrics) across distributed microservices.
+- Identified and eliminated cross-user geocoding redundancy by implementing deterministic query caching (SHA-256 hashing, 7-day TTL) in front of AWS Location Service, achieving 95%+ cache hit rate and \$7,000 month cost reduction.
 - Own platform strategy and architecture, partnering with executive leadership to scale infrastructure, define technical roadmaps, and balance cost with reliability.
 - Built Trino clusters on Kubernetes integrating PostgreSQL and S3 data sources, enabling cross-source SQL querying via REST API for real-time subscription metrics (2M+ daily queries).
 - Developed self-service infrastructure provisioning with Terraform and Ansible, reducing deployment friction and enabling engineering teams to ship faster.

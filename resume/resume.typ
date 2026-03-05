@@ -52,6 +52,7 @@ Computer Network Management and Design BSc (Hons) \
 
 #link("https://www.community.com/")[*Community.com*] #h(1fr) September 2020 -- Present \
 Staff Platform Engineer #h(1fr) _Remote, USA_ \
+- Designed and built a real-time Python natural language survey response classification service, implementing a multi-stage pipeline which includes deterministic identifier matching with grapheme-aware emoji normalization, zero-shot NLI via cross-encoder `DeBERTa` with confidence thresholding, and `BERTopic` topic modeling using sentence embeddings (`MPNet`) and `UMAP`, to classify free-text responses from protobuf-encoded RabbitMQ events.
 - Led zero-downtime migration of 150+ microservices serving 5M+ daily API requests from Apache Mesos to Kubernetes (EKS), running both platforms in parallel using custom #link("https://github.com/ninesstack/sidecar")[sidecar] service discovery for seamless cutover and instant rollback.
 - Drove 33% annual reduction in cloud costs (~\$320K/year) through spend controls, cost-aware policies, and systematic workload rightsizing, while maintaining 99.5% uptime SLA.
 - Architect and operate highly available RabbitMQ clusters on Kubernetes backed by HAProxy, powering the event-driven platform that processes 430M+ events monthly (messages, entities, commands, metrics) across distributed microservices.
@@ -63,7 +64,7 @@ Staff Platform Engineer #h(1fr) _Remote, USA_ \
 - Took ownership of Databricks/Spark data pipelines after data engineering team departure, maintaining and upgrading batch processing jobs for event snapshots, parquet compaction, and analytics.
 - Created Go-based Slack bot leveraging OpenAI GPT-4o for automated runbook retrieval with vector RAG, injecting on-call context to reduce incident response time.
 - Built Temporal workflow orchestration platform from scratch, initially on EC2, later migrated to EKS with RDS and Elasticsearch backends, schema migrations, Prometheus metrics, and production runbooks.
-- Led SOC 2 Type 1 certification to completion; currently driving Type 2 audit, implementing infrastructure controls, access policies, and security processes.
+- Led SOC2 Type 1 & 2 audit, implementing infrastructure controls, access policies, and security processes. From evidencing to successful compliance and certification #link("https://trust.community.com/")[trust.community.com].
 
 #link("https://www.nomura.com/")[*Nomura*] #h(1fr) May 2020 -- August 2020 \
 VP Cloud Engineering #h(1fr) _Remote, UK_ \

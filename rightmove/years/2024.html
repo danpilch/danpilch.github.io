@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rightmove HPI — 2024</title><style>
+:root{
+  --ink:#1d2433; --muted:#5b6678; --line:#e7eaf0; --bg:#f6f8fb;
+  --card:#ffffff; --accent:#0aa07f; --accent-soft:#e3f5ef; --accent2:#3a6ea5;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+header.hero{background:linear-gradient(135deg,#10303a,#0aa07f);color:#fff;padding:54px 0 40px}
+header.hero h1{margin:0 0 6px;font-size:30px;letter-spacing:-.4px}
+header.hero p{margin:0;opacity:.9;max-width:64ch}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:30px}
+.card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px}
+.card-num{font-size:26px;font-weight:700}
+.card-label{font-size:12.5px;opacity:.9;margin-top:2px}
+nav.topnav{background:#10303a;position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.08)}
+nav.topnav .wrap{display:flex;gap:4px;flex-wrap:wrap}
+nav.topnav a{color:#cfe7df;text-decoration:none;font-size:13.5px;font-weight:600;padding:13px 14px;
+  border-bottom:2px solid transparent}
+nav.topnav a:hover{color:#fff}
+nav.topnav a.active{color:#fff;border-bottom-color:var(--accent)}
+main{padding:42px 0 60px}
+section{margin-bottom:46px}
+h2{font-size:21px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--muted);font-size:14px;margin:0 0 18px;max-width:74ch}
+.callout{background:var(--accent-soft);border:1px solid #c7ebe0;border-radius:12px;padding:14px 18px;font-size:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;
+  box-shadow:0 1px 2px rgba(20,30,50,.04)}
+.panel h3{margin:0 0 6px;font-size:15px}
+.panel .sub{margin-bottom:12px}
+.chart-box{position:relative;height:260px}
+.chart-box.tall{height:340px}
+.tablewrap{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tabletitle{padding:11px 14px;font-weight:700;font-size:13px;background:#fbfcfe;border-bottom:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#fbfcfe;color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+tbody tr:last-child td{border-bottom:none}
+td .num,span.num{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.pill{display:inline-block;background:var(--accent-soft);color:#0a6e57;border-radius:999px;
+  padding:2px 9px;font-size:12px;margin:0 0 0 6px}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+@media(max-width:760px){.cols2{grid-template-columns:1fr}}
+.yearbar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 30px}
+.yearbar a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:999px;
+  padding:7px 16px;font-weight:600;font-size:14px;color:var(--muted)}
+.yearbar a.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 18px}
+details summary{cursor:pointer;font-weight:600;padding:10px 0}
+ul.headlines{list-style:none;columns:2;column-gap:30px;padding:8px 0 14px;margin:0;font-size:13.5px}
+@media(max-width:680px){ul.headlines{columns:1}}
+ul.headlines li{break-inside:avoid;margin:0 0 11px;padding-left:0}
+ul.headlines .hl-date{display:block;font-size:11.5px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.03em;color:var(--accent);margin-bottom:1px}
+ul.headlines .hl-date a{color:var(--accent);text-decoration:none}
+ul.headlines .hl-date a:hover{text-decoration:underline}
+ul.headlines .hl-text{color:var(--ink)}
+.prose{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 30px 24px}
+.prose h1{font-size:24px}
+.prose h2{font-size:19px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
+.prose h2:first-of-type{border-top:none;padding-top:0}
+.prose h3{font-size:15.5px;margin-top:20px}
+.prose code{background:#f0f2f6;padding:1px 5px;border-radius:5px;font-size:.9em}
+.prose table{border:1px solid var(--line);border-radius:10px;margin:14px 0;font-size:13px}
+.prose ul,.prose ol{padding-left:22px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13px;text-align:center}
+</style></head><body><header class="hero"><div class="wrap"><h1>2024</h1><p>9 reports · 11,289 words · net sentiment 6.64 per 1k (net reassuring).</p></div></header><nav class="topnav"><div class="wrap"><a href="../index.html">Overview</a><a href="../trends.html">Trends</a><a class="active" href="../years/2021.html">By year</a><a href="../speakers.html">Speakers</a><a href="../vocabulary.html">Vocabulary</a></div></nav><main class="wrap"><div class="yearbar"><a href="2021.html">2021</a><a href="2022.html">2022</a><a href="2023.html">2023</a><a class="active" href="2024.html">2024</a><a href="2025.html">2025</a><a href="2026.html">2026</a></div><section><h2>What this year was about</h2><p class="sub">Words this year used far more than the rest of the corpus — its preoccupations, not generic property language.</p><div class="tablewrap"><table><thead><tr><th>word</th><th>uses</th><th>vs rest of corpus</th></tr></thead><tbody><tr><td>election</td><td><span class="num">35</span></td><td><span class="num">48.3×</span></td></tr><tr><td>tentatively</td><td><span class="num">4</span></td><td><span class="num">22.1×</span></td></tr><tr><td>speeds</td><td><span class="num">4</span></td><td><span class="num">22.1×</span></td></tr><tr><td>called</td><td><span class="num">4</span></td><td><span class="num">22.1×</span></td></tr><tr><td>campaign</td><td><span class="num">4</span></td><td><span class="num">22.1×</span></td></tr><tr><td>manifesto</td><td><span class="num">4</span></td><td><span class="num">22.1×</span></td></tr><tr><td>elevated</td><td><span class="num">13</span></td><td><span class="num">17.9×</span></td></tr><tr><td>operating</td><td><span class="num">3</span></td><td><span class="num">16.5×</span></td></tr><tr><td>approaching</td><td><span class="num">3</span></td><td><span class="num">16.5×</span></td></tr><tr><td>cherry</td><td><span class="num">3</span></td><td><span class="num">16.5×</span></td></tr><tr><td>painful</td><td><span class="num">3</span></td><td><span class="num">16.5×</span></td></tr><tr><td>something</td><td><span class="num">3</span></td><td><span class="num">16.5×</span></td></tr></tbody></table></div></section><section><h2>Tone profile</h2><p class="sub">Hits in this year, raw and per 1,000 words.</p><div class="tablewrap"><table><thead><tr><th>category</th><th>hits</th><th>per 1k words</th></tr></thead><tbody><tr><td>superlatives</td><td><span class="num">46</span></td><td><span class="num">4.07</span></td></tr><tr><td>hedges</td><td><span class="num">68</span></td><td><span class="num">6.02</span></td></tr><tr><td>reassurance</td><td><span class="num">103</span></td><td><span class="num">9.12</span></td></tr><tr><td>caution to sellers</td><td><span class="num">28</span></td><td><span class="num">2.48</span></td></tr><tr><td>softening pivots</td><td><span class="num">111</span></td><td><span class="num">9.83</span></td></tr></tbody></table></div></section><section><h2>Headlines</h2><ul class="headlines"><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/january-2024/" target="_blank" rel="noopener">January</a></span><span class="hl-text">Tentatively promising new year start as buyer and seller activity jump</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/february-2024/" target="_blank" rel="noopener">February</a></span><span class="hl-text">Early-bird buyers build market momentum but price sensitivity remains</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/march-2024/" target="_blank" rel="noopener">March</a></span><span class="hl-text">Stronger buyer demand and sales as market marches into Spring</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/april-2024/" target="_blank" rel="noopener">April</a></span><span class="hl-text">Spring activity boost pushes asking prices close to new record</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/may-2024/" target="_blank" rel="noopener">May</a></span><span class="hl-text">Record asking prices driven by pent-up demand</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/june-2024/" target="_blank" rel="noopener">June</a></span><span class="hl-text">Market maintains momentum despite more tentative top-end</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/july-2024/" target="_blank" rel="noopener">July</a></span><span class="hl-text">Political certainty and potential rate drop bode well for Autumn market</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/press-centre/house-price-index/august-2024/" target="_blank" rel="noopener">August</a></span><span class="hl-text">Bank Rate cut spurs further upturn in market activity</span></li><li><span class="hl-date"><a href="https://www.rightmove.co.uk/news/house-price-index/september-2024/" target="_blank" rel="noopener">September</a></span><span class="hl-text">Decade-high choice to benefit Spring buyers who miss stamp duty deadline</span></li></ul></section><section><h2>Voices this year</h2><p class="sub">Tim Bannister (17), Kate Eales (2), Chris Rowson (1), Paul Bayliss (1), Marc (1), Kevin Shaw (1), Jim Parker (1), Nick Leeming (1)</p></section><section><h2>Sample report — August 2024</h2><div class="prose"><h3>Bank Rate cut spurs further upturn in market activity</h3><ul><li>Average new seller asking prices see a seasonal drop of 1.5% (-£5,708) this month to £367,785. August has seen a monthly decline in prices from July for the last 18 years, with this month’s fall in line with the long-term average</li><li>The first Bank of England rate cut for four years has led to an immediate upturn in buyer activity:</li><li>The number of potential buyers contacting estate agents about homes for sale has jumped from 11% up on the prior year across the month of July, to 19% up since the 1st of August compared to the same time a year ago</li><li>Rightmove raises its 2024 forecast from -1% to +1% due to positive market data and trends compared to the much more subdued 2023:</li><li>The number of sales being agreed is now 16% ahead of the near-peak-mortgage-rate period of a year ago</li></ul><p>The average price of property coming to the market for sale sees a seasonal drop of 1.5% this month (-£5,708) to £367,785. New seller asking prices have fallen in the month of August for the past 18 years, and the size of this month’s drop is in line with the long-term average. The distractions of school summer holidays traditionally bring a dip in prices, as some buyers put their home-moving plans on hold to enjoy holidays or time with family. This also means that new sellers who do come to market at this quieter time of year may have a pressing need to sell, which means they tend to price more competitively. However, summer sellers this year may find that there is a degree of buyer buzz around the market that was missing in the peak-mortgage-rate market at this time last year. As anticipated in Rightmove’s July report, the first Bank of England rate cut for four years at the start of the month has helped to accelerate mortgage rate drops and contributed significantly to improved buyer demand. These better conditions are helping to set up a positive Autumn market, and a further spur to activity following the Bank Rate cut has led Rightmove to raise its 2024 forecast from a 1% drop over the whole of 2024 to a 1% rise in new seller asking prices.</p><p>“The first Bank Rate cut since 2020 has sparked a welcome late summer boost in buyer activity. While mortgage rates aren’t yet substantially lower since the rate cut, the fact that the long-hoped-for first cut has finally arrived, and mortgage rates are heading downwards, is positive for home-mover sentiment. As the summer holiday season comes to an end, the conditions are there for a more active autumn market. The reaction from home-movers to what is hopefully only the first of several rate cuts over the next year or two, combined with other positive data and trends, has led us to raise our price prediction for the year. We now expect new seller prices to rise marginally by 1% over the whole of 2024. This is a relatively small revision from our original prediction of a 1% fall in prices over the year, since we didn’t initially forecast anything more drastic than a slight drop in prices this year.”</p></div></section></main><footer class="wrap">Built from Rightmove HPI reports with <code>analyze.py</code> + <code>build_site.py</code>.</footer></body></html>
